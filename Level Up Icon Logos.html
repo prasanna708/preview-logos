@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Level Up Icon Logos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>
+.back { margin: 0 0 28px; font-size: 14px; font-weight: 700; }
+.back a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+:root {
+  --page: #E8E7E2;
+  --surface: #FAFAF8;
+  --ink: #111214;
+  --muted: #5B5F66;
+  --line: rgba(17, 18, 20, 0.12);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #17181A;
+    --surface: #202124;
+    --ink: #ECEBE7;
+    --muted: #A2A5AB;
+    --line: rgba(236, 235, 231, 0.12);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #17181A;
+  --surface: #202124;
+  --ink: #ECEBE7;
+  --muted: #A2A5AB;
+  --line: rgba(236, 235, 231, 0.12);
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  padding-inline: clamp(16px, 4vw, 44px);
+  padding-block: 56px 88px;
+}
+.wrap { max-width: 1200px; margin: 0 auto; }
+
+.head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 440px);
+  gap: 20px 48px;
+  align-items: end;
+  padding-bottom: 34px;
+  border-bottom: 1px solid var(--line);
+}
+.eyebrow {
+  margin: 0 0 14px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+h1 {
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.lede { margin: 0; color: var(--muted); max-width: 50ch; }
+
+.overview {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 36px;
+}
+.overview a {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding: 18px 10px 14px;
+  border-radius: 12px;
+  background: #F7F6F3;
+  color: #111214;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.overview a:focus-visible { outline: 3px solid #2B4DFF; outline-offset: 3px; }
+.overview svg { width: 100%; max-width: 104px; height: auto; aspect-ratio: 1; }
+
+.board { margin-top: 72px; scroll-margin-top: 24px; }
+.board-head {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 0 14px;
+  margin-bottom: 18px;
+}
+.num {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.15;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.board-head h2 { margin: 0 0 6px; font-weight: 800; font-size: 30px; line-height: 1.1; letter-spacing: -0.02em; }
+.board-head p { margin: 0; color: var(--muted); max-width: 70ch; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: 340px 270px;
+  gap: 12px;
+}
+.tile {
+  position: relative;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 44px 28px 28px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.tile figcaption {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+.t-lock { grid-column: 2 / 4; }
+.t-light { background: #F7F6F3; color: #111214; --bg: #F7F6F3; }
+.t-dark { background: #0F1012; color: #F4F4F0; --bg: #0F1012; }
+.t-neutral { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+
+.tile svg { display: block; width: 100%; height: 100%; }
+.t-icon svg { max-width: 236px; max-height: 236px; }
+.t-lock svg { max-width: 540px; max-height: 190px; }
+.t-brand svg { max-width: 180px; max-height: 180px; }
+.t-stack svg { max-width: 260px; max-height: 210px; }
+
+.icons { display: flex; align-items: flex-end; gap: 20px; }
+.icons svg { width: auto; height: auto; }
+.icons .lg { width: 112px; height: 112px; filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.22)); }
+.icons .sm { width: 48px; height: 48px; }
+
+.foot { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; max-width: 72ch; }
+
+@media (max-width: 1000px) {
+  .overview { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-auto-rows: minmax(250px, auto); }
+  .t-lock { grid-column: 1 / -1; order: -1; min-height: 260px; }
+  .t-app { grid-column: 1 / -1; }
+}
+@media (max-width: 820px) {
+  .head { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 620px) {
+  body { padding-block: 32px 56px; }
+  .overview { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .tile { min-height: 230px; padding: 44px 18px 22px; }
+  .board-head { grid-template-columns: 40px minmax(0, 1fr); }
+  .num { font-size: 24px; }
+  .icons .lg { width: 96px; height: 96px; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- Custom lettering, cap height 100 -->
+    <path id="hL" d="M0 0H26V76H62V100H0Z"/>
+    <path id="hE" d="M0 0H64V24H26V38H58V62H26V76H66V100H0Z"/>
+    <path id="hV" d="M0 0H27.8L46 47.9L64.2 0H92L54 100H38Z"/>
+    <path id="hU" d="M0 0H26V63.5A12 12 0 0 0 50 63.5V0H76V63.5A38 38 0 0 1 0 63.5Z"/>
+    <path id="hP" fill-rule="evenodd" d="M0 0H40A32 32 0 0 1 40 64H26V100H0ZM26 24H40A8 8 0 0 1 40 40H26Z"/>
+    <path id="mL" d="M0 0H12V88H54V100H0Z"/>
+    <path id="mE" d="M0 0H56V12H12V44H50V56H12V88H58V100H0Z"/>
+    <path id="mV" d="M0 0H12.8L40 73.5L67.2 0H80L43 100H37Z"/>
+    <path id="mU" d="M0 0H12V68A21 21 0 0 0 54 68V0H66V68A33 33 0 0 1 0 68Z"/>
+    <path id="mP" fill-rule="evenodd" d="M0 0H31A29 29 0 0 1 31 58H12V100H0ZM12 12H31A17 17 0 0 1 31 46H12Z"/>
+    <g id="wmH"><use href="#hL"/><use href="#hE" x="72"/><use href="#hV" x="142"/><use href="#hE" x="238"/><use href="#hL" x="314"/><use href="#hU" x="404"/><use href="#hP" x="490"/></g>
+    <g id="wmM"><use href="#mL"/><use href="#mE" x="86"/><use href="#mV" x="170"/><use href="#mE" x="276"/><use href="#mL" x="366"/><use href="#mU" x="480"/><use href="#mP" x="578"/></g>
+
+    <g id="txtH">
+      <use href="#wmH" transform="translate(196 53) scale(.5)" fill="currentColor"/>
+      <text x="196" y="127.5" font-family="Manrope, sans-serif" font-size="12" font-weight="700" textLength="281" fill="currentColor" opacity=".72">PERSONALISED FITNESS STUDIO</text>
+    </g>
+    <g id="txtHm">
+      <use href="#wmM" transform="translate(196 56) scale(.44)" fill="currentColor"/>
+      <text x="196" y="124.5" font-family="Manrope, sans-serif" font-size="12" font-weight="600" textLength="281" fill="currentColor" opacity=".75">PERSONALISED FITNESS STUDIO</text>
+    </g>
+    <g id="txtS">
+      <use href="#wmH" transform="translate(30.75 172) scale(.46)" fill="currentColor"/>
+      <text x="160" y="244" text-anchor="middle" font-family="Manrope, sans-serif" font-size="11.5" font-weight="700" textLength="258" fill="currentColor" opacity=".72">PERSONALISED FITNESS STUDIO</text>
+    </g>
+    <g id="txtSm">
+      <use href="#wmM" transform="translate(30.8 172) scale(.405)" fill="currentColor"/>
+      <text x="160" y="238" text-anchor="middle" font-family="Manrope, sans-serif" font-size="11.5" font-weight="600" textLength="258" fill="currentColor" opacity=".75">PERSONALISED FITNESS STUDIO</text>
+    </g>
+
+    <!-- 01 Pull-Up -->
+    <symbol id="iPull" viewBox="0 0 200 200">
+      <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 67H182" stroke-width="12"/>
+        <path d="M60 67L65 101L86 85M140 67L135 101L114 85" stroke-width="15"/>
+        <path d="M85 83H115L109 125H91Z" fill="currentColor" stroke-width="10"/>
+        <path d="M94 127L91 175M106 127L109 175" stroke-width="15"/>
+      </g>
+      <circle cx="100" cy="37" r="19" style="fill:var(--acc)"/>
+    </symbol>
+
+    <!-- 02 Step Up -->
+    <symbol id="iStep" viewBox="0 0 200 200">
+      <path style="fill:var(--acc)" d="M19 184V170Q19 166 23 166H109V138Q109 134 113 134H177Q181 134 181 138V184Z"/>
+      <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M121 54L109 98" stroke-width="20"/>
+        <path d="M109 98L97 130L83 158M109 98L141 98L145 126" stroke-width="16"/>
+        <path d="M120 60L139 72L149 58M118 62L101 74L93 90" stroke-width="14"/>
+      </g>
+      <circle cx="125" cy="32" r="16" fill="currentColor"/>
+    </symbol>
+
+    <!-- 03 Kettlebell Peak -->
+    <symbol id="iBell" viewBox="0 0 200 200">
+      <path fill-rule="evenodd" style="fill:var(--acc)" d="M60 101C56 55 76 15 100 15C124 15 144 55 140 101ZM97.5 41.35Q100 37 102.5 41.35L114.5 62.65Q117 67 113.5 67L86.5 67Q83 67 85.5 62.65Z"/>
+      <path d="M73.8 185A60 60 0 1 1 126.2 185Z" fill="currentColor"/>
+    </symbol>
+
+    <!-- 04 25 kg plate -->
+    <symbol id="iPlate" viewBox="0 0 200 200">
+      <path fill-rule="evenodd" style="fill:var(--acc)" d="M4 100A96 96 0 1 0 196 100A96 96 0 1 0 4 100ZM87 100A13 13 0 1 0 113 100A13 13 0 1 0 87 100Z"/>
+      <circle cx="100" cy="100" r="80" fill="none" stroke="#FFFFFF" stroke-opacity=".45" stroke-width="3"/>
+      <path fill-rule="evenodd" fill="#D5D5D2" d="M70 100A30 30 0 1 0 130 100A30 30 0 1 0 70 100ZM87 100A13 13 0 1 0 113 100A13 13 0 1 0 87 100Z"/>
+      <path d="M76 58L100 38L124 58" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+      <use href="#wmH" transform="translate(66.3 144) scale(.12)" fill="#FFFFFF"/>
+    </symbol>
+
+    <!-- 05 Summit -->
+    <symbol id="iSummit" viewBox="0 0 200 200">
+      <path d="M14 177L92 51L170 177Z" fill="currentColor" stroke="currentColor" stroke-width="8" stroke-linejoin="round"/>
+      <path d="M56 173L114 151L72 129L102 109L82 91L92 73" fill="none" style="stroke:var(--bg)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 10"/>
+      <path d="M110 177L148 115L186 177Z" fill="none" style="stroke:var(--bg)" stroke-width="16" stroke-linejoin="round"/>
+      <path d="M110 177L148 115L186 177Z" fill="currentColor" stroke="currentColor" stroke-width="8" stroke-linejoin="round"/>
+      <path d="M92 48V20" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+      <path d="M92 19L118 27L92 35Z" style="fill:var(--acc)"/>
+    </symbol>
+
+    <!-- 06 Ignite -->
+    <symbol id="iFlame" viewBox="0 0 200 200">
+      <path style="fill:var(--acc)" d="M112 12C118 44 158 70 158 122C158 160 132 188 100 188C68 188 42 162 42 126C42 100 54 82 68 70C68 90 76 102 88 106C82 74 92 38 112 12Z"/>
+      <path style="fill:var(--flame-in, #FFC43D)" d="M104 92C108 112 130 124 130 148C130 166 116 178 100 178C84 178 70 166 70 150C70 136 78 126 86 120C86 132 92 140 98 142C94 124 98 106 104 92Z"/>
+    </symbol>
+
+    <!-- 07 Hex Dumbbell -->
+    <symbol id="iDumb" viewBox="0 0 200 200">
+      <g transform="rotate(-32 100 100)" stroke-linejoin="round">
+        <rect x="64" y="93" width="72" height="14" rx="3" fill="currentColor"/>
+        <rect x="59" y="87" width="8" height="26" rx="2" fill="currentColor"/>
+        <rect x="133" y="87" width="8" height="26" rx="2" fill="currentColor"/>
+        <path d="M40 64L60 82V118L40 136L20 118V82Z" fill="currentColor" stroke="currentColor" stroke-width="6"/>
+        <path d="M160 64L180 82V118L160 136L140 118V82Z" style="fill:var(--acc);stroke:var(--acc)" stroke-width="6"/>
+      </g>
+    </symbol>
+
+    <!-- 08 Stopwatch -->
+    <symbol id="iWatch" viewBox="0 0 200 200">
+      <rect x="82" y="14" width="36" height="14" rx="5" fill="currentColor"/>
+      <rect x="93" y="24" width="14" height="18" fill="currentColor"/>
+      <rect x="150" y="46" width="20" height="12" rx="3" fill="currentColor" transform="rotate(-45 160 52)"/>
+      <circle cx="100" cy="112" r="66" fill="none" stroke="currentColor" stroke-width="16"/>
+      <path d="M100 46A66 66 0 0 1 157.2 145" fill="none" style="stroke:var(--acc)" stroke-width="16" stroke-linecap="round"/>
+      <path d="M154 112H144M100 166V156M46 112H56" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+      <path d="M100 112V66" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+      <circle cx="100" cy="112" r="10" fill="currentColor"/>
+    </symbol>
+
+    <!-- 09 Medal -->
+    <symbol id="iMedal" viewBox="0 0 200 200">
+      <path d="M54 14H86L112 92H80Z" fill="currentColor"/>
+      <path d="M146 14H114L88 92H120Z" fill="currentColor" opacity=".72"/>
+      <circle cx="100" cy="136" r="46" style="fill:var(--acc)"/>
+      <circle cx="100" cy="136" r="35" fill="none" stroke="#111214" stroke-opacity=".28" stroke-width="3"/>
+      <path fill="#111214" d="M100 116L104.82 129.37L119.02 129.82L107.8 138.53L111.76 152.18L100 144.2L88.24 152.18L92.2 138.53L80.98 129.82L95.18 129.37Z"/>
+    </symbol>
+
+    <!-- 10 Heavy Bag -->
+    <symbol id="iBag" viewBox="0 0 200 200">
+      <circle cx="100" cy="18" r="8" fill="none" stroke="currentColor" stroke-width="5"/>
+      <path d="M100 26L76 58M100 26V54M100 26L124 58" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <rect x="64" y="52" width="72" height="136" rx="24" style="fill:var(--acc)"/>
+      <rect x="64" y="74" width="72" height="9" style="fill:var(--bg)"/>
+      <rect x="64" y="156" width="72" height="9" style="fill:var(--bg)"/>
+    </symbol>
+
+    <!-- 11 Gym Rings -->
+    <symbol id="iRings" viewBox="0 0 200 200">
+      <path d="M26 22H174" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+      <path d="M58 22V106M142 22V106" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+      <rect x="48" y="58" width="20" height="12" rx="3" fill="currentColor"/>
+      <rect x="132" y="58" width="20" height="12" rx="3" fill="currentColor"/>
+      <circle cx="58" cy="142" r="30" fill="none" style="stroke:var(--acc)" stroke-width="14"/>
+      <circle cx="142" cy="142" r="30" fill="none" style="stroke:var(--acc)" stroke-width="14"/>
+    </symbol>
+
+    <!-- 12 Pulse -->
+    <symbol id="iPulse" viewBox="0 0 200 200">
+      <path style="fill:var(--acc)" d="M100 176C58 148 20 116 20 76C20 46 42 26 68 26C82 26 94 34 100 46C106 34 118 26 132 26C158 26 180 46 180 76C180 116 142 148 100 176Z"/>
+      <path d="M8 116H62L76 84L92 146L106 98H192" fill="none" style="stroke:var(--bg)" stroke-width="9" stroke-linejoin="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+
+  <p class="back"><a href="./">Back to logo selection</a></p>
+
+  <header class="head">
+    <div>
+      <p class="eyebrow">Level Up · Personalised Fitness Studio · Round 4</p>
+      <h1>Icon logos</h1>
+    </div>
+    <p class="lede">Twelve logos led by a symbol. Each icon works on its own, on a sign, a T-shirt or as an app icon, and pairs with the custom LEVEL UP lettering.</p>
+  </header>
+
+  <nav class="overview" aria-label="All twelve icons">
+    <a href="#pullup" style="--acc:#0089A8;--bg:#F7F6F3"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#iPull"/></svg>01 Pull-Up</a>
+    <a href="#stepup" style="--acc:#2B4DFF;--bg:#F7F6F3"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#iStep"/></svg>02 Step Up</a>
+    <a href="#kettlebell" style="--acc:#009162;--bg:#F7F6F3"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#iBell"/></svg>03 Kettlebell Peak</a>
+    <a href="#plate" style="--acc:#E1140A;--bg:#F7F6F3"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#iPlate"/></svg>04 25 kg</a>
+    <a href="#summit" style="--acc:#9A6B00;--bg:#F7F6F3"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#iSummit"/></svg>05 Summit</a>
+    <a href="#ignite" style="--acc:#E8490F;--bg:#F7F6F3"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#iFlame"/></svg>06 Ignite</a>
+    <a href="#dumbbell" style="--acc:#B87400;--bg:#F7F6F3"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#iDumb"/></svg>07 Hex Dumbbell</a>
+    <a href="#stopwatch" style="--acc:#6E4BFF;--bg:#F7F6F3"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#iWatch"/></svg>08 Stopwatch</a>
+    <a href="#medal" style="--acc:#C28A12;--bg:#F7F6F3"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#iMedal"/></svg>09 Medal</a>
+    <a href="#bag" style="--acc:#D91E2E;--bg:#F7F6F3"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#iBag"/></svg>10 Heavy Bag</a>
+    <a href="#rings" style="--acc:#00897B;--bg:#F7F6F3"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#iRings"/></svg>11 Rings</a>
+    <a href="#pulse" style="--acc:#E8365D;--bg:#F7F6F3"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#iPulse"/></svg>12 Pulse</a>
+  </nav>
+
+  <!-- 01 -->
+  <section class="board" id="pullup" aria-labelledby="b1">
+    <div class="board-head">
+      <span class="num">01</span>
+      <div>
+        <h2 id="b1">Pull-Up</h2>
+        <p>A pull-up at the top of the rep, chin over the bar. The bar is the level, and the head rising above it is the client levelling up.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile t-icon t-light" style="--acc:#0089A8">
+        <figcaption>Icon</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="Pull-Up icon"><use href="#iPull"/></svg>
+      </figure>
+      <figure class="tile t-lock t-light" style="--acc:#0089A8">
+        <figcaption>Logo</figcaption>
+        <svg viewBox="0 0 491 180" role="img" aria-label="Pull-Up logo"><use href="#iPull" x="6" y="6" width="168" height="168"/><use href="#txtH"/></svg>
+      </figure>
+      <figure class="tile t-brand" style="background:#0089A8;color:#FFFFFF;--acc:#FFFFFF;--bg:#0089A8">
+        <figcaption>One colour on Aqua</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="Pull-Up icon in white on aqua"><use href="#iPull"/></svg>
+      </figure>
+      <figure class="tile t-stack t-dark" style="--acc:#22D3EE">
+        <figcaption>Stacked</figcaption>
+        <svg viewBox="0 0 320 258" role="img" aria-label="Pull-Up stacked logo on black"><use href="#iPull" x="90" y="10" width="140" height="140"/><use href="#txtS"/></svg>
+      </figure>
+      <figure class="tile t-app t-neutral">
+        <figcaption>App icon</figcaption>
+        <div class="icons">
+          <svg class="lg" viewBox="0 0 100 100" role="img" aria-label="Pull-Up app icon"><rect width="100" height="100" rx="22" fill="#0B0D12"/><use href="#iPull" x="12" y="12" width="76" height="76" style="color:#FFFFFF;--acc:#22D3EE"/></svg>
+          <svg class="sm" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#0B0D12"/><use href="#iPull" x="12" y="12" width="76" height="76" style="color:#FFFFFF;--acc:#22D3EE"/></svg>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section class="board" id="stepup" aria-labelledby="b2">
+    <div class="board-head">
+      <span class="num">02</span>
+      <div>
+        <h2 id="b2">Step Up</h2>
+        <p>A step-up, one of the first moves in any personal programme, with the platforms rising like levels. The figure is drawn in the style of sports pictograms, so it stays clear at small sizes.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile t-icon t-light" style="--acc:#2B4DFF">
+        <figcaption>Icon</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="Step Up icon"><use href="#iStep"/></svg>
+      </figure>
+      <figure class="tile t-lock t-light" style="--acc:#2B4DFF">
+        <figcaption>Logo</figcaption>
+        <svg viewBox="0 0 491 180" role="img" aria-label="Step Up logo"><use href="#iStep" x="6" y="6" width="168" height="168"/><use href="#txtH"/></svg>
+      </figure>
+      <figure class="tile t-brand" style="background:#2B4DFF;color:#FFFFFF;--acc:#FFFFFF;--bg:#2B4DFF">
+        <figcaption>One colour on Cobalt</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="Step Up icon in white on cobalt"><use href="#iStep"/></svg>
+      </figure>
+      <figure class="tile t-stack t-dark" style="--acc:#6180FF">
+        <figcaption>Stacked</figcaption>
+        <svg viewBox="0 0 320 258" role="img" aria-label="Step Up stacked logo on black"><use href="#iStep" x="90" y="10" width="140" height="140"/><use href="#txtS"/></svg>
+      </figure>
+      <figure class="tile t-app t-neutral">
+        <figcaption>App icon</figcaption>
+        <div class="icons">
+          <svg class="lg" viewBox="0 0 100 100" role="img" aria-label="Step Up app icon"><rect width="100" height="100" rx="22" fill="#0B0D12"/><use href="#iStep" x="12" y="12" width="76" height="76" style="color:#FFFFFF;--acc:#6180FF"/></svg>
+          <svg class="sm" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#0B0D12"/><use href="#iStep" x="12" y="12" width="76" height="76" style="color:#FFFFFF;--acc:#6180FF"/></svg>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section class="board" id="kettlebell" aria-labelledby="b3">
+    <div class="board-head">
+      <span class="num">03</span>
+      <div>
+        <h2 id="b3">Kettlebell Peak</h2>
+        <p>A kettlebell whose handle opening is a triangle pointing up, so the most recognisable piece of studio kit also says up. The handle carries the accent colour, and the solid shape stays bold on signage and embroidery.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile t-icon t-light" style="--acc:#009162">
+        <figcaption>Icon</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="Kettlebell Peak icon"><use href="#iBell"/></svg>
+      </figure>
+      <figure class="tile t-lock t-light" style="--acc:#009162">
+        <figcaption>Logo</figcaption>
+        <svg viewBox="0 0 491 180" role="img" aria-label="Kettlebell Peak logo"><use href="#iBell" x="6" y="6" width="168" height="168"/><use href="#txtH"/></svg>
+      </figure>
+      <figure class="tile t-brand" style="background:#009162;color:#FFFFFF;--acc:#FFFFFF;--bg:#009162">
+        <figcaption>One colour on Emerald</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="Kettlebell Peak icon in white on emerald"><use href="#iBell"/></svg>
+      </figure>
+      <figure class="tile t-stack t-dark" style="--acc:#2BD99A">
+        <figcaption>Stacked</figcaption>
+        <svg viewBox="0 0 320 258" role="img" aria-label="Kettlebell Peak stacked logo on black"><use href="#iBell" x="90" y="10" width="140" height="140"/><use href="#txtS"/></svg>
+      </figure>
+      <figure class="tile t-app t-neutral">
+        <figcaption>App icon</figcaption>
+        <div class="icons">
+          <svg class="lg" viewBox="0 0 100 100" role="img" aria-label="Kettlebell Peak app icon"><rect width="100" height="100" rx="22" fill="#009162"/><use href="#iBell" x="14" y="14" width="72" height="72" style="color:#FFFFFF;--acc:#FFFFFF"/></svg>
+          <svg class="sm" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#009162"/><use href="#iBell" x="14" y="14" width="72" height="72" style="color:#FFFFFF;--acc:#FFFFFF"/></svg>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section class="board" id="plate" aria-labelledby="b4">
+    <div class="board-head">
+      <span class="num">04</span>
+      <div>
+        <h2 id="b4">25 kg</h2>
+        <p>A red competition bumper plate. In competition colours, red marks the 25 kg plate, the heaviest standard disc, and the plate carries the studio name the way real equipment does. It uses the red from the GymMobile app.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile t-icon t-light" style="--acc:#E1140A">
+        <figcaption>Icon</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="25 kg plate icon"><use href="#iPlate"/></svg>
+      </figure>
+      <figure class="tile t-lock t-light" style="--acc:#E1140A">
+        <figcaption>Logo</figcaption>
+        <svg viewBox="0 0 491 180" role="img" aria-label="25 kg plate logo"><use href="#iPlate" x="6" y="6" width="168" height="168"/><use href="#txtH"/></svg>
+      </figure>
+      <figure class="tile t-brand" style="background:#111214;color:#FFFFFF;--acc:#E1140A;--bg:#111214">
+        <figcaption>On black</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="25 kg plate icon on black"><use href="#iPlate"/></svg>
+      </figure>
+      <figure class="tile t-stack t-dark" style="--acc:#E1140A">
+        <figcaption>Stacked</figcaption>
+        <svg viewBox="0 0 320 258" role="img" aria-label="25 kg stacked logo on black"><use href="#iPlate" x="90" y="10" width="140" height="140"/><use href="#txtS"/></svg>
+      </figure>
+      <figure class="tile t-app t-neutral">
+        <figcaption>App icon</figcaption>
+        <div class="icons">
+          <svg class="lg" viewBox="0 0 100 100" role="img" aria-label="25 kg app icon"><rect width="100" height="100" rx="22" fill="#111214"/><use href="#iPlate" x="10" y="10" width="80" height="80" style="--acc:#E1140A"/></svg>
+          <svg class="sm" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#111214"/><use href="#iPlate" x="10" y="10" width="80" height="80" style="--acc:#E1140A"/></svg>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 05 -->
+  <section class="board" id="summit" aria-labelledby="b5">
+    <div class="board-head">
+      <span class="num">05</span>
+      <div>
+        <h2 id="b5">Summit</h2>
+        <p>A peak with a switchback trail and a flag at the top. Each turn in the trail is a level, and the flag is the goal a client sets with their coach. Paired with the lighter lettering for a calmer, premium feel.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile t-icon t-light" style="--acc:#9A6B00">
+        <figcaption>Icon</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="Summit icon"><use href="#iSummit"/></svg>
+      </figure>
+      <figure class="tile t-lock t-light" style="--acc:#9A6B00">
+        <figcaption>Logo</figcaption>
+        <svg viewBox="0 0 491 180" role="img" aria-label="Summit logo"><use href="#iSummit" x="6" y="6" width="168" height="168"/><use href="#txtHm"/></svg>
+      </figure>
+      <figure class="tile t-brand" style="background:#10193A;color:#FFFFFF;--acc:#E0A526;--bg:#10193A">
+        <figcaption>On Midnight</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="Summit icon on midnight blue"><use href="#iSummit"/></svg>
+      </figure>
+      <figure class="tile t-stack t-dark" style="--acc:#E0A526">
+        <figcaption>Stacked</figcaption>
+        <svg viewBox="0 0 320 258" role="img" aria-label="Summit stacked logo on black"><use href="#iSummit" x="90" y="10" width="140" height="140"/><use href="#txtSm"/></svg>
+      </figure>
+      <figure class="tile t-app t-neutral">
+        <figcaption>App icon</figcaption>
+        <div class="icons">
+          <svg class="lg" viewBox="0 0 100 100" role="img" aria-label="Summit app icon"><rect width="100" height="100" rx="22" fill="#10193A"/><use href="#iSummit" x="12" y="10" width="76" height="76" style="color:#FFFFFF;--acc:#E0A526;--bg:#10193A"/></svg>
+          <svg class="sm" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#10193A"/><use href="#iSummit" x="12" y="10" width="76" height="76" style="color:#FFFFFF;--acc:#E0A526;--bg:#10193A"/></svg>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 06 -->
+  <section class="board" id="ignite" aria-labelledby="b6">
+    <div class="board-head">
+      <span class="num">06</span>
+      <div>
+        <h2 id="b6">Ignite</h2>
+        <p>A two-tone flame for energy and effort. It is the most direct of the six and reads instantly at any size, from a phone icon to the studio wall.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile t-icon t-light" style="--acc:#E8490F">
+        <figcaption>Icon</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="Ignite icon"><use href="#iFlame"/></svg>
+      </figure>
+      <figure class="tile t-lock t-light" style="--acc:#E8490F">
+        <figcaption>Logo</figcaption>
+        <svg viewBox="0 0 491 180" role="img" aria-label="Ignite logo"><use href="#iFlame" x="6" y="6" width="168" height="168"/><use href="#txtH"/></svg>
+      </figure>
+      <figure class="tile t-brand" style="background:#E8490F;color:#FFFFFF;--acc:#FFFFFF;--flame-in:#E8490F;--bg:#E8490F">
+        <figcaption>One colour on Flame</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="Ignite icon in white on orange"><use href="#iFlame"/></svg>
+      </figure>
+      <figure class="tile t-stack t-dark" style="--acc:#FF5A1F">
+        <figcaption>Stacked</figcaption>
+        <svg viewBox="0 0 320 258" role="img" aria-label="Ignite stacked logo on black"><use href="#iFlame" x="90" y="10" width="140" height="140"/><use href="#txtS"/></svg>
+      </figure>
+      <figure class="tile t-app t-neutral">
+        <figcaption>App icon</figcaption>
+        <div class="icons">
+          <svg class="lg" viewBox="0 0 100 100" role="img" aria-label="Ignite app icon"><rect width="100" height="100" rx="22" fill="#111214"/><use href="#iFlame" x="12" y="12" width="76" height="76" style="--acc:#FF5A1F"/></svg>
+          <svg class="sm" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#111214"/><use href="#iFlame" x="12" y="12" width="76" height="76" style="--acc:#FF5A1F"/></svg>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 07 -->
+  <section class="board" id="dumbbell" aria-labelledby="b7">
+    <div class="board-head">
+      <span class="num">07</span>
+      <div>
+        <h2 id="b7">Hex Dumbbell</h2>
+        <p>A hex dumbbell tilted upward, with the rising end in amber. The most familiar object in any gym, turned so that it climbs.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile t-icon t-light" style="--acc:#B87400">
+        <figcaption>Icon</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="Hex Dumbbell icon"><use href="#iDumb"/></svg>
+      </figure>
+      <figure class="tile t-lock t-light" style="--acc:#B87400">
+        <figcaption>Logo</figcaption>
+        <svg viewBox="0 0 491 180" role="img" aria-label="Hex Dumbbell logo"><use href="#iDumb" x="6" y="6" width="168" height="168"/><use href="#txtH"/></svg>
+      </figure>
+      <figure class="tile t-brand" style="background:#F5A300;color:#111214;--acc:#111214;--bg:#F5A300">
+        <figcaption>One colour on Amber</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="Hex Dumbbell icon in black on amber"><use href="#iDumb"/></svg>
+      </figure>
+      <figure class="tile t-stack t-dark" style="--acc:#FFB21A">
+        <figcaption>Stacked</figcaption>
+        <svg viewBox="0 0 320 258" role="img" aria-label="Hex Dumbbell stacked logo on black"><use href="#iDumb" x="90" y="10" width="140" height="140"/><use href="#txtS"/></svg>
+      </figure>
+      <figure class="tile t-app t-neutral">
+        <figcaption>App icon</figcaption>
+        <div class="icons">
+          <svg class="lg" viewBox="0 0 100 100" role="img" aria-label="Hex Dumbbell app icon"><rect width="100" height="100" rx="22" fill="#111214"/><use href="#iDumb" x="10" y="10" width="80" height="80" style="color:#F4F4F0;--acc:#FFB21A"/></svg>
+          <svg class="sm" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#111214"/><use href="#iDumb" x="10" y="10" width="80" height="80" style="color:#F4F4F0;--acc:#FFB21A"/></svg>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 08 -->
+  <section class="board" id="stopwatch" aria-labelledby="b8">
+    <div class="board-head">
+      <span class="num">08</span>
+      <div>
+        <h2 id="b8">Stopwatch</h2>
+        <p>A stopwatch with the hand at twelve and a progress ring running round the dial. Every session is timed and tracked, and the ring fills as the client moves up.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile t-icon t-light" style="--acc:#6E4BFF">
+        <figcaption>Icon</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="Stopwatch icon"><use href="#iWatch"/></svg>
+      </figure>
+      <figure class="tile t-lock t-light" style="--acc:#6E4BFF">
+        <figcaption>Logo</figcaption>
+        <svg viewBox="0 0 491 180" role="img" aria-label="Stopwatch logo"><use href="#iWatch" x="6" y="6" width="168" height="168"/><use href="#txtH"/></svg>
+      </figure>
+      <figure class="tile t-brand" style="background:#6E4BFF;color:#FFFFFF;--acc:#FFFFFF;--bg:#6E4BFF">
+        <figcaption>One colour on Violet</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="Stopwatch icon in white on violet"><use href="#iWatch"/></svg>
+      </figure>
+      <figure class="tile t-stack t-dark" style="--acc:#9B85FF">
+        <figcaption>Stacked</figcaption>
+        <svg viewBox="0 0 320 258" role="img" aria-label="Stopwatch stacked logo on black"><use href="#iWatch" x="90" y="10" width="140" height="140"/><use href="#txtS"/></svg>
+      </figure>
+      <figure class="tile t-app t-neutral">
+        <figcaption>App icon</figcaption>
+        <div class="icons">
+          <svg class="lg" viewBox="0 0 100 100" role="img" aria-label="Stopwatch app icon"><rect width="100" height="100" rx="22" fill="#111214"/><use href="#iWatch" x="12" y="12" width="76" height="76" style="color:#FFFFFF;--acc:#9B85FF"/></svg>
+          <svg class="sm" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#111214"/><use href="#iWatch" x="12" y="12" width="76" height="76" style="color:#FFFFFF;--acc:#9B85FF"/></svg>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 09 -->
+  <section class="board" id="medal" aria-labelledby="b9">
+    <div class="board-head">
+      <span class="num">09</span>
+      <div>
+        <h2 id="b9">Medal</h2>
+        <p>A gold medal for a personal best, the result every client is working towards. A classic badge that reads well on kit and on social posts.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile t-icon t-light" style="--acc:#C28A12">
+        <figcaption>Icon</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="Medal icon"><use href="#iMedal"/></svg>
+      </figure>
+      <figure class="tile t-lock t-light" style="--acc:#C28A12">
+        <figcaption>Logo</figcaption>
+        <svg viewBox="0 0 491 180" role="img" aria-label="Medal logo"><use href="#iMedal" x="6" y="6" width="168" height="168"/><use href="#txtH"/></svg>
+      </figure>
+      <figure class="tile t-brand" style="background:#111214;color:#F4F4F0;--acc:#E0A526;--bg:#111214">
+        <figcaption>On black</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="Medal icon on black"><use href="#iMedal"/></svg>
+      </figure>
+      <figure class="tile t-stack t-dark" style="--acc:#E0A526">
+        <figcaption>Stacked</figcaption>
+        <svg viewBox="0 0 320 258" role="img" aria-label="Medal stacked logo on black"><use href="#iMedal" x="90" y="10" width="140" height="140"/><use href="#txtS"/></svg>
+      </figure>
+      <figure class="tile t-app t-neutral">
+        <figcaption>App icon</figcaption>
+        <div class="icons">
+          <svg class="lg" viewBox="0 0 100 100" role="img" aria-label="Medal app icon"><rect width="100" height="100" rx="22" fill="#111214"/><use href="#iMedal" x="12" y="12" width="76" height="76" style="color:#F4F4F0;--acc:#E0A526"/></svg>
+          <svg class="sm" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#111214"/><use href="#iMedal" x="12" y="12" width="76" height="76" style="color:#F4F4F0;--acc:#E0A526"/></svg>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 10 -->
+  <section class="board" id="bag" aria-labelledby="b10">
+    <div class="board-head">
+      <span class="num">10</span>
+      <div>
+        <h2 id="b10">Heavy Bag</h2>
+        <p>A heavy bag for boxing and conditioning work. Simple shapes that stay clear on a sign, a pair of gloves or a phone screen.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile t-icon t-light" style="--acc:#D91E2E">
+        <figcaption>Icon</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="Heavy Bag icon"><use href="#iBag"/></svg>
+      </figure>
+      <figure class="tile t-lock t-light" style="--acc:#D91E2E">
+        <figcaption>Logo</figcaption>
+        <svg viewBox="0 0 491 180" role="img" aria-label="Heavy Bag logo"><use href="#iBag" x="6" y="6" width="168" height="168"/><use href="#txtH"/></svg>
+      </figure>
+      <figure class="tile t-brand" style="background:#D91E2E;color:#FFFFFF;--acc:#FFFFFF;--bg:#D91E2E">
+        <figcaption>One colour on Red</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="Heavy Bag icon in white on red"><use href="#iBag"/></svg>
+      </figure>
+      <figure class="tile t-stack t-dark" style="--acc:#FF3B47">
+        <figcaption>Stacked</figcaption>
+        <svg viewBox="0 0 320 258" role="img" aria-label="Heavy Bag stacked logo on black"><use href="#iBag" x="90" y="10" width="140" height="140"/><use href="#txtS"/></svg>
+      </figure>
+      <figure class="tile t-app t-neutral">
+        <figcaption>App icon</figcaption>
+        <div class="icons">
+          <svg class="lg" viewBox="0 0 100 100" role="img" aria-label="Heavy Bag app icon"><rect width="100" height="100" rx="22" fill="#D91E2E"/><use href="#iBag" x="12" y="12" width="76" height="76" style="color:#FFFFFF;--acc:#FFFFFF;--bg:#D91E2E"/></svg>
+          <svg class="sm" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#D91E2E"/><use href="#iBag" x="12" y="12" width="76" height="76" style="color:#FFFFFF;--acc:#FFFFFF;--bg:#D91E2E"/></svg>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 11 -->
+  <section class="board" id="rings" aria-labelledby="b11">
+    <div class="board-head">
+      <span class="num">11</span>
+      <div>
+        <h2 id="b11">Rings</h2>
+        <p>Gymnastic rings hanging from a beam, for bodyweight strength. The beam is the level, and the rings are where clients pull themselves up.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile t-icon t-light" style="--acc:#00897B">
+        <figcaption>Icon</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="Rings icon"><use href="#iRings"/></svg>
+      </figure>
+      <figure class="tile t-lock t-light" style="--acc:#00897B">
+        <figcaption>Logo</figcaption>
+        <svg viewBox="0 0 491 180" role="img" aria-label="Rings logo"><use href="#iRings" x="6" y="6" width="168" height="168"/><use href="#txtH"/></svg>
+      </figure>
+      <figure class="tile t-brand" style="background:#00897B;color:#FFFFFF;--acc:#FFFFFF;--bg:#00897B">
+        <figcaption>One colour on Teal</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="Rings icon in white on teal"><use href="#iRings"/></svg>
+      </figure>
+      <figure class="tile t-stack t-dark" style="--acc:#22D3BE">
+        <figcaption>Stacked</figcaption>
+        <svg viewBox="0 0 320 258" role="img" aria-label="Rings stacked logo on black"><use href="#iRings" x="90" y="10" width="140" height="140"/><use href="#txtS"/></svg>
+      </figure>
+      <figure class="tile t-app t-neutral">
+        <figcaption>App icon</figcaption>
+        <div class="icons">
+          <svg class="lg" viewBox="0 0 100 100" role="img" aria-label="Rings app icon"><rect width="100" height="100" rx="22" fill="#111214"/><use href="#iRings" x="12" y="12" width="76" height="76" style="color:#FFFFFF;--acc:#22D3BE"/></svg>
+          <svg class="sm" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#111214"/><use href="#iRings" x="12" y="12" width="76" height="76" style="color:#FFFFFF;--acc:#22D3BE"/></svg>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 12 -->
+  <section class="board" id="pulse" aria-labelledby="b12">
+    <div class="board-head">
+      <span class="num">12</span>
+      <div>
+        <h2 id="b12">Pulse</h2>
+        <p>A heart whose pulse line steps up a level after the beat. It suits a studio that puts health and steady progress first.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile t-icon t-light" style="--acc:#E8365D">
+        <figcaption>Icon</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="Pulse icon"><use href="#iPulse"/></svg>
+      </figure>
+      <figure class="tile t-lock t-light" style="--acc:#E8365D">
+        <figcaption>Logo</figcaption>
+        <svg viewBox="0 0 491 180" role="img" aria-label="Pulse logo"><use href="#iPulse" x="6" y="6" width="168" height="168"/><use href="#txtH"/></svg>
+      </figure>
+      <figure class="tile t-brand" style="background:#E8365D;color:#FFFFFF;--acc:#FFFFFF;--bg:#E8365D">
+        <figcaption>One colour on Rose</figcaption>
+        <svg viewBox="0 0 200 200" role="img" aria-label="Pulse icon in white on rose"><use href="#iPulse"/></svg>
+      </figure>
+      <figure class="tile t-stack t-dark" style="--acc:#FF5C7C">
+        <figcaption>Stacked</figcaption>
+        <svg viewBox="0 0 320 258" role="img" aria-label="Pulse stacked logo on black"><use href="#iPulse" x="90" y="10" width="140" height="140"/><use href="#txtS"/></svg>
+      </figure>
+      <figure class="tile t-app t-neutral">
+        <figcaption>App icon</figcaption>
+        <div class="icons">
+          <svg class="lg" viewBox="0 0 100 100" role="img" aria-label="Pulse app icon"><rect width="100" height="100" rx="22" fill="#111214"/><use href="#iPulse" x="12" y="12" width="76" height="76" style="--acc:#FF5C7C;--bg:#111214"/></svg>
+          <svg class="sm" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#111214"/><use href="#iPulse" x="12" y="12" width="76" height="76" style="--acc:#FF5C7C;--bg:#111214"/></svg>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <p class="foot">These are concepts for discussion. The chosen icon will be refined and delivered with the full logo set: icon only, horizontal, stacked and one-colour versions, in SVG and PNG, plus app launcher icons.</p>
+</div>
+</body>
+</html>
