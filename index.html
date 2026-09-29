@@ -1,0 +1,867 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Level Up Logo Selection</title>
+<meta name="description" content="Twelve logo ideas for Level Up Personalised Fitness Studio. Tap the ones you like and send your choice.">
+<meta property="og:title" content="Choose the Level Up logo">
+<meta property="og:description" content="Twelve logo ideas for Level Up Personalised Fitness Studio. Tap the ones you like and send your choice.">
+<meta property="og:type" content="website">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F1F0EC">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#131416">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,900;1,900&family=Barlow:wght@400;500;600;800&family=Bricolage+Grotesque:wght@800&family=Jost:wght@500&family=Outfit:wght@400;500;600;700;800&family=Space+Mono:wght@700&family=Unbounded:wght@800&family=Yellowtail&display=swap">
+<style>
+:root {
+  --page: #F1F0EC;
+  --surface: #FFFFFF;
+  --ink: #111214;
+  --muted: #5E636B;
+  --line: rgba(17, 18, 20, 0.12);
+  --chip: rgba(17, 18, 20, 0.07);
+  --focus: #2F5BFF;
+  --panel-dark: #0F0F0F;
+  --panel-light: #F5F5F2;
+  --on-dark: #F5F5F2;
+  --on-light: #0F0F0F;
+  --wa: #15803D;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #131416;
+    --surface: #1B1C1F;
+    --ink: #EEEDE9;
+    --muted: #A0A4AB;
+    --line: rgba(238, 237, 233, 0.13);
+    --chip: rgba(238, 237, 233, 0.1);
+    --focus: #8FA6FF;
+    color-scheme: dark;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: 'Outfit', 'Segoe UI', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  padding-inline: clamp(16px, 4vw, 40px);
+  padding-block: calc(40px + env(safe-area-inset-top, 0px)) 64px;
+}
+body.has-bar { padding-bottom: calc(104px + env(safe-area-inset-bottom, 0px)); }
+
+.wrap { max-width: 1180px; margin: 0 auto; }
+
+.head { display: grid; gap: 14px; max-width: 780px; margin-bottom: 26px; }
+.eyebrow {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+h1 {
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(38px, 6vw, 64px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+.lede { margin: 0; font-size: 17px; color: var(--muted); max-width: 60ch; }
+
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-bottom: 44px; }
+.toolbar-label { font-size: 14px; font-weight: 600; color: var(--muted); }
+.seg { display: inline-flex; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+.seg button {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 36px;
+  padding: 6px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--page); }
+
+.set { margin-bottom: 60px; }
+.set-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px 24px;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+.set-head h2 { margin: 0; font-weight: 800; font-size: 28px; line-height: 1.15; letter-spacing: -0.015em; }
+.set-head h2 span { font-weight: 500; color: var(--muted); }
+.set-head p { margin: 4px 0 0; color: var(--muted); max-width: 60ch; }
+.set-link {
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  text-align: left;
+  font: inherit;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.card:hover { border-color: var(--muted); }
+.card[aria-pressed="true"] { border-color: var(--ink); box-shadow: 0 0 0 2px var(--ink); }
+.card:focus-visible, .btn:focus-visible, .seg button:focus-visible, .remove:focus-visible, .set-link:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  padding: 26px 22px;
+  background: var(--panel-dark);
+  color: var(--on-dark);
+  --acc: var(--acc-d);
+  --bg: var(--panel-dark);
+}
+[data-bg="light"] .preview { background: var(--panel-light); color: var(--on-light); --acc: var(--acc-l); --bg: var(--panel-light); }
+.preview svg { display: block; width: 100%; height: 100%; max-width: 320px; }
+
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  color: #F5F5F2;
+  background: rgba(15, 15, 15, 0.35);
+  border: 1.5px solid rgba(245, 245, 242, 0.55);
+  font-variant-numeric: tabular-nums;
+}
+[data-bg="light"] .badge { color: #0F0F0F; background: rgba(245, 245, 242, 0.7); border-color: rgba(15, 15, 15, 0.4); }
+.card[aria-pressed="true"] .badge { color: #0F0F0F; background: #F5F5F2; border-color: #F5F5F2; }
+[data-bg="light"] .card[aria-pressed="true"] .badge { color: #F5F5F2; background: #0F0F0F; border-color: #0F0F0F; }
+
+.card-body { display: grid; gap: 4px; padding: 14px 16px 16px; }
+.card-title { display: flex; align-items: center; gap: 10px; }
+.code {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: var(--chip);
+  font-variant-numeric: tabular-nums;
+}
+.card-name { font-weight: 700; font-size: 18px; }
+.card-desc { font-size: 14px; line-height: 1.45; color: var(--muted); }
+
+.send {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 28px 40px;
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  scroll-margin-top: 16px;
+}
+.send h2 { margin: 0 0 6px; font-weight: 800; font-size: 28px; line-height: 1.15; letter-spacing: -0.015em; }
+.send-intro { margin: 0 0 16px; color: var(--muted); }
+.picks { list-style: none; margin: 0 0 14px; padding: 0; display: grid; gap: 8px; }
+.picks li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 8px 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.rank { width: 20px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.thumb {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 44px;
+  padding: 5px;
+  border-radius: 6px;
+  background: var(--panel-dark);
+  color: var(--on-dark);
+  --bg: var(--panel-dark);
+}
+.thumb svg { display: block; width: 100%; height: 100%; }
+.pick-label { min-width: 0; font-weight: 600; }
+.pick-label span { color: var(--muted); font-weight: 500; margin-right: 6px; }
+.remove {
+  margin-left: auto;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 20px;
+  cursor: pointer;
+}
+.remove:hover { background: var(--chip); color: var(--ink); }
+.empty { margin: 0 0 14px; padding: 14px; border: 1px dashed var(--line); border-radius: 10px; color: var(--muted); }
+
+.form { display: grid; gap: 16px; align-content: start; }
+.field { display: grid; gap: 6px; }
+.field label { font-weight: 600; font-size: 14px; }
+.field textarea, .field input {
+  width: 100%;
+  font: inherit;
+  font-size: 16px;
+  padding: 10px 12px;
+  color: var(--ink);
+  background: var(--page);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.field textarea { resize: vertical; }
+.field textarea:focus, .field input:focus { outline: 2px solid var(--focus); outline-offset: 1px; }
+#msg-preview { font-size: 14px; color: var(--muted); }
+
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 18px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.btn:hover { border-color: var(--muted); }
+.btn-wa { color: #FFFFFF; background: var(--wa); border-color: var(--wa); }
+.btn-wa:hover { border-color: var(--wa); filter: brightness(1.08); }
+.btn-dark { color: var(--page); background: var(--ink); border-color: var(--ink); }
+.btn[aria-disabled="true"] { opacity: 0.45; pointer-events: none; }
+.status { margin: 0; min-height: 1.5em; font-size: 14px; color: var(--muted); }
+
+.foot { margin-top: 36px; color: var(--muted); font-size: 14px; }
+
+.bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px clamp(16px, 4vw, 40px) calc(12px + env(safe-area-inset-bottom, 0px));
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.1);
+}
+.bar-text { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; }
+.bar .btn { flex: none; }
+
+@media (max-width: 980px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .send { grid-template-columns: minmax(0, 1fr); padding: 20px; }
+}
+@media (max-width: 620px) {
+  body { padding-top: calc(28px + env(safe-area-inset-top, 0px)); }
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .preview { height: 180px; }
+  .set-head h2 { font-size: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card { transition: none; }
+  html { scroll-behavior: auto; }
+}
+html { scroll-behavior: smooth; }
+</style>
+</head>
+<body data-bg="dark">
+
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="led-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <path id="arc-top" d="M45 160A115 115 0 0 1 275 160"/>
+    <path id="arc-bot" d="M30 160A130 130 0 0 0 290 160"/>
+
+    <!-- Set A -->
+    <symbol id="m-ascent" viewBox="-40 -82 328 258">
+      <g transform="skewX(-12)">
+        <path fill="currentColor" d="M0 0H44V128H104V172H0Z"/>
+        <path style="fill:var(--acc)" d="M120 0H164V110C164 124 172 130 186 130C200 130 208 124 208 110V-18H180L230-78L280-18H252V114C252 152 228 172 186 172C144 172 120 152 120 114Z"/>
+      </g>
+    </symbol>
+    <symbol id="m-lockout" viewBox="-96 -12 192 208">
+      <g style="fill:var(--acc)">
+        <rect x="-92" y="6" width="184" height="7" rx="2"/>
+        <rect x="-74" y="-8" width="13" height="35" rx="2.5"/>
+        <rect x="-88" y="-2" width="11" height="23" rx="2.5"/>
+        <rect x="61" y="-8" width="13" height="35" rx="2.5"/>
+        <rect x="77" y="-2" width="11" height="23" rx="2.5"/>
+      </g>
+      <g fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M-44 12L-21 62M44 12L21 62" fill="none" stroke-width="11"/>
+        <circle cx="0" cy="39" r="12.5" stroke="none"/>
+        <path d="M-23 59H23L15 113H-15Z" stroke-width="6"/>
+        <path d="M-10 110L-34 182M10 110L34 182" fill="none" stroke-width="13"/>
+      </g>
+    </symbol>
+    <symbol id="m-kettle" viewBox="-64 -68 128 158">
+      <g fill="currentColor" fill-rule="evenodd">
+        <path d="M-48 10C-55-14-52-44-40-54C-30-62-16-62 0-62C16-62 30-62 40-54C52-44 55-14 48 10ZM-33 4C-37-14-36-34-28-40C-21-46-11-47 0-47C11-47 21-46 28-40C36-34 37-14 33 4Z"/>
+        <path d="M-29.4 84A58 58 0 1 1 29.4 84ZM-11 66V34H-30L0-2L30 34H11V66Z"/>
+      </g>
+    </symbol>
+    <symbol id="m-stages" viewBox="-66 -36 132 158">
+      <path style="fill:var(--acc)" d="M-60 20L0-30L60 20V44L0-6L-60 44Z"/>
+      <path fill="currentColor" opacity=".55" d="M-60 56L0 6L60 56V80L0 30L-60 80Z"/>
+      <path fill="currentColor" opacity=".25" d="M-60 92L0 42L60 92V116L0 66L-60 116Z"/>
+    </symbol>
+    <symbol id="m-hex" viewBox="-76 -86 152 172">
+      <polygon points="0,-80 69.28,-40 69.28,40 0,80 -69.28,40 -69.28,-40" fill="none" style="stroke:var(--acc)" stroke-width="6" stroke-linejoin="round"/>
+      <path d="M-15-20L0-34L15-20" fill="none" style="stroke:var(--acc)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="1.5" y="38" text-anchor="middle" font-family="Barlow, sans-serif" font-size="56" font-weight="500" letter-spacing="3" fill="currentColor">LU</text>
+    </symbol>
+
+    <g id="l-ascent" font-family="'Barlow Condensed', Impact, 'Arial Narrow', sans-serif">
+      <use href="#m-ascent" x="122" y="16" width="236" height="185.6"/>
+      <text x="240" y="262" text-anchor="middle" font-size="54" font-weight="900" font-style="italic" textLength="206" fill="currentColor">LEVEL <tspan style="fill:var(--acc)">UP</tspan></text>
+      <path d="M52 295.5H94M386 295.5H428" fill="none" style="stroke:var(--acc)" stroke-width="2.5"/>
+      <text x="240" y="300" text-anchor="middle" font-family="Barlow, sans-serif" font-size="13" font-weight="600" textLength="268" fill="currentColor" opacity=".8">PERSONALISED FITNESS STUDIO</text>
+    </g>
+    <g id="l-lockout" font-family="'Barlow Condensed', Impact, 'Arial Narrow', sans-serif">
+      <use href="#m-lockout" x="10" y="16" width="181" height="196"/>
+      <text x="214" y="128" font-size="66" font-weight="900" font-style="italic" textLength="250" fill="currentColor">LEVEL <tspan style="fill:var(--acc)">UP</tspan></text>
+      <text x="216" y="158" font-family="Barlow, sans-serif" font-size="11.5" font-weight="600" textLength="248" fill="currentColor" opacity=".8">PERSONALISED FITNESS STUDIO</text>
+    </g>
+    <g id="l-forge" font-family="'Barlow Condensed', Impact, 'Arial Narrow', sans-serif">
+      <circle cx="160" cy="160" r="148" fill="none" style="stroke:var(--acc)" stroke-width="6"/>
+      <circle cx="160" cy="160" r="106" fill="none" stroke="currentColor" stroke-width="2" opacity=".4"/>
+      <use href="#m-kettle" x="109.75" y="98" width="100.5" height="124"/>
+      <text text-anchor="middle" font-size="30" font-weight="900" letter-spacing="9" fill="currentColor"><textPath href="#arc-top" startOffset="51.2%">LEVEL UP</textPath></text>
+      <text text-anchor="middle" font-family="Barlow, sans-serif" font-size="12" font-weight="600" letter-spacing="2.4" fill="currentColor" opacity=".85"><textPath href="#arc-bot" startOffset="50.3%">PERSONALISED FITNESS STUDIO</textPath></text>
+      <circle cx="35" cy="160" r="4.5" style="fill:var(--acc)"/>
+      <circle cx="285" cy="160" r="4.5" style="fill:var(--acc)"/>
+    </g>
+    <g id="l-stages" font-family="'Barlow Condensed', Impact, 'Arial Narrow', sans-serif">
+      <use href="#m-stages" x="16" y="22" width="120" height="143.6"/>
+      <text x="160" y="84" font-size="72" font-weight="900" font-style="italic" textLength="191" fill="currentColor">LEVEL</text>
+      <text x="160" y="150" font-size="72" font-weight="900" font-style="italic" letter-spacing="9" style="fill:var(--acc)">UP</text>
+      <g font-family="Barlow, sans-serif" font-size="10.5" font-weight="600" letter-spacing="1.6" fill="currentColor" opacity=".8">
+        <text x="262" y="107" textLength="89">PERSONALISED</text>
+        <text x="262" y="128.5">FITNESS</text>
+        <text x="262" y="150">STUDIO</text>
+      </g>
+    </g>
+    <g id="l-bar">
+      <text x="240" y="70" text-anchor="middle" font-family="Barlow, sans-serif" font-size="70" font-weight="800" textLength="250" fill="currentColor">LEVEL</text>
+      <rect x="30" y="88" width="420" height="8" rx="2" fill="currentColor"/>
+      <rect x="86" y="80" width="6" height="24" rx="1" fill="currentColor"/>
+      <rect x="388" y="80" width="6" height="24" rx="1" fill="currentColor"/>
+      <g style="fill:var(--acc)">
+        <rect x="64" y="60" width="18" height="64" rx="3"/>
+        <rect x="50" y="70" width="12" height="44" rx="3"/>
+        <rect x="40" y="78" width="8" height="28" rx="2"/>
+        <rect x="398" y="60" width="18" height="64" rx="3"/>
+        <rect x="418" y="70" width="12" height="44" rx="3"/>
+        <rect x="432" y="78" width="8" height="28" rx="2"/>
+      </g>
+      <text x="240" y="191" text-anchor="middle" font-family="Barlow, sans-serif" font-size="104" font-weight="800" style="fill:var(--acc)">UP</text>
+      <text x="240" y="227" text-anchor="middle" font-family="Barlow, sans-serif" font-size="12" font-weight="600" textLength="250" fill="currentColor" opacity=".8">PERSONALISED FITNESS STUDIO</text>
+    </g>
+    <g id="l-apex">
+      <use href="#m-hex" x="20" y="25" width="132.6" height="150"/>
+      <path d="M182 52V148" fill="none" style="stroke:var(--acc)" stroke-width="1.5"/>
+      <text x="206" y="101" font-family="Barlow, sans-serif" font-size="46" font-weight="500" textLength="290" fill="currentColor">LEVEL UP</text>
+      <text x="207" y="132" font-family="Barlow, sans-serif" font-size="12" font-weight="500" textLength="288" style="fill:var(--acc)">PERSONALISED FITNESS STUDIO</text>
+    </g>
+
+    <!-- Set B -->
+    <symbol id="m-dpad" viewBox="-72 -72 144 144">
+      <path style="fill:var(--acc)" d="M-22-27V-57Q-22-66-13-66H13Q22-66 22-57V-27Z"/>
+      <path fill="currentColor" d="M-66-13Q-66-22-57-22H57Q66-22 66-13V13Q66 22 57 22H22V57Q22 66 13 66H-13Q-22 66-22 57V22H-57Q-66 22-66 13Z"/>
+      <circle r="11" fill="none" style="stroke:var(--bg)" stroke-width="3" opacity=".55"/>
+    </symbol>
+    <symbol id="m-boxes" viewBox="-6 -8 160 134">
+      <g fill="currentColor" fill-rule="evenodd">
+        <path d="M5 78H39Q44 78 44 83V115Q44 120 39 120H5Q0 120 0 115V83Q0 78 5 78ZM15.5 88H28.5A3.5 3.5 0 0 1 28.5 95H15.5A3.5 3.5 0 0 1 15.5 88Z"/>
+        <path d="M55 54H89Q94 54 94 59V115Q94 120 89 120H55Q50 120 50 115V59Q50 54 55 54ZM65.5 64H78.5A3.5 3.5 0 0 1 78.5 71H65.5A3.5 3.5 0 0 1 65.5 64Z"/>
+        <path d="M105 30H139Q144 30 144 35V115Q144 120 139 120H105Q100 120 100 115V35Q100 30 105 30ZM115.5 40H128.5A3.5 3.5 0 0 1 128.5 47H115.5A3.5 3.5 0 0 1 115.5 40Z"/>
+      </g>
+      <path d="M22 66C34 18 84-8 108 4" fill="none" style="stroke:var(--acc)" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="0.1 8"/>
+      <circle cx="122" cy="10" r="10" style="fill:var(--acc)"/>
+    </symbol>
+    <symbol id="m-contour" viewBox="-80 -80 160 160">
+      <g id="contour-fine" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></g>
+    </symbol>
+
+    <g id="l-pressup">
+      <use href="#m-dpad" x="22" y="24" width="132" height="132"/>
+      <text x="184" y="96" font-family="Unbounded, sans-serif" font-size="42" font-weight="800" textLength="290" fill="currentColor">LEVEL <tspan style="fill:var(--acc)">UP</tspan></text>
+      <text x="186" y="126" font-family="Outfit, sans-serif" font-size="12.5" font-weight="600" textLength="286" fill="currentColor" opacity=".8">PERSONALISED FITNESS STUDIO</text>
+    </g>
+    <g id="l-boxjump">
+      <use href="#m-boxes" x="18" y="26" width="160" height="134"/>
+      <text x="200" y="104" font-family="Outfit, sans-serif" font-size="70" font-weight="800" textLength="270" fill="currentColor">level <tspan style="fill:var(--acc)">up</tspan></text>
+      <text x="203" y="144" font-family="Outfit, sans-serif" font-size="12.5" font-weight="600" textLength="264" fill="currentColor" opacity=".8">PERSONALISED FITNESS STUDIO</text>
+    </g>
+    <g id="l-contour">
+      <use href="#m-contour" x="125" y="14" width="150" height="150"/>
+      <text x="200" y="222" text-anchor="middle" font-family="Jost, sans-serif" font-size="44" font-weight="500" textLength="290" fill="currentColor">LEVEL UP</text>
+      <text x="200" y="254" text-anchor="middle" font-family="Jost, sans-serif" font-size="12" font-weight="500" textLength="290" fill="currentColor" opacity=".75">PERSONALISED FITNESS STUDIO</text>
+    </g>
+    <g id="l-scoreboard">
+      <rect x="10" y="10" width="502" height="102" rx="14" fill="#070707" stroke="currentColor" stroke-opacity=".22" stroke-width="1.5"/>
+      <g id="matrix-full"></g>
+      <text x="261" y="146" text-anchor="middle" font-family="'Space Mono', monospace" font-size="14" font-weight="700" textLength="380" fill="currentColor" opacity=".8">PERSONALISED FITNESS STUDIO</text>
+    </g>
+    <g id="l-exponent">
+      <text x="18" y="132" font-family="'Bricolage Grotesque', sans-serif" font-size="120" font-weight="800" letter-spacing="-2" fill="currentColor">LEVEL<tspan dx="10" dy="-50" font-size="50" letter-spacing="0" style="fill:var(--acc)">UP</tspan></text>
+      <text x="21" y="172" font-family="Outfit, sans-serif" font-size="12.5" font-weight="600" textLength="330" fill="currentColor" opacity=".8">PERSONALISED FITNESS STUDIO</text>
+    </g>
+    <g id="l-signature">
+      <text x="232" y="118" text-anchor="middle" font-family="Yellowtail, cursive" font-size="104" fill="currentColor">Level Up</text>
+      <path style="fill:var(--acc)" d="M62 150C150 166 300 170 424 112L428 117C306 180 150 180 62 153Z"/>
+      <text x="232" y="204" text-anchor="middle" font-family="Outfit, sans-serif" font-size="12.5" font-weight="600" textLength="260" fill="currentColor" opacity=".8">PERSONALISED FITNESS STUDIO</text>
+    </g>
+  </defs>
+</svg>
+
+<div class="wrap">
+
+  <header class="head">
+    <p class="eyebrow">Level Up · Personalised Fitness Studio</p>
+    <h1>Choose your logo</h1>
+    <p class="lede">There are 12 ideas in two sets. Tap the logos you like in order of preference, favourite first. Then send your choice from the bottom of the page.</p>
+  </header>
+
+  <div class="toolbar">
+    <span class="toolbar-label" id="bg-label">Show logos on</span>
+    <div class="seg" role="group" aria-labelledby="bg-label">
+      <button type="button" id="bg-dark" aria-pressed="true">Dark</button>
+      <button type="button" id="bg-light" aria-pressed="false">Light</button>
+    </div>
+  </div>
+
+  <main>
+    <section class="set" aria-labelledby="set-a-title">
+      <div class="set-head">
+        <div>
+          <h2 id="set-a-title">Set A <span>· Bold and athletic</span></h2>
+          <p>Heavy italic lettering with classic fitness symbols.</p>
+        </div>
+        <a class="set-link" href="Level%20Up%20Logo%20Concepts.html">View the full Set A presentation</a>
+      </div>
+      <div class="grid">
+        <button type="button" class="card" data-code="A1" data-name="Ascent" data-lockup="l-ascent" data-vb="0 0 480 324" aria-pressed="false" style="--acc-d:#86DB4A;--acc-l:#3E9E1C">
+          <span class="preview"><svg viewBox="0 0 480 324" aria-hidden="true" focusable="false"><use href="#l-ascent"/></svg></span>
+          <span class="badge" aria-hidden="true">+</span>
+          <span class="card-body">
+            <span class="card-title"><span class="code">A1</span><span class="card-name">Ascent</span></span>
+            <span class="card-desc">An L and U monogram. The right arm of the U rises into an arrow.</span>
+          </span>
+        </button>
+        <button type="button" class="card" data-code="A2" data-name="Lockout" data-lockup="l-lockout" data-vb="0 0 484 228" aria-pressed="false" style="--acc-d:#E1140A;--acc-l:#E1140A">
+          <span class="preview"><svg viewBox="0 0 484 228" aria-hidden="true" focusable="false"><use href="#l-lockout"/></svg></span>
+          <span class="badge" aria-hidden="true">+</span>
+          <span class="card-body">
+            <span class="card-title"><span class="code">A2</span><span class="card-name">Lockout</span></span>
+            <span class="card-desc">A lifter holding a loaded barbell overhead, with the bar in red.</span>
+          </span>
+        </button>
+        <button type="button" class="card" data-code="A3" data-name="Forge" data-lockup="l-forge" data-vb="0 0 320 320" aria-pressed="false" style="--acc-d:#FF7A1A;--acc-l:#E2560C">
+          <span class="preview"><svg viewBox="0 0 320 320" aria-hidden="true" focusable="false"><use href="#l-forge"/></svg></span>
+          <span class="badge" aria-hidden="true">+</span>
+          <span class="card-body">
+            <span class="card-title"><span class="code">A3</span><span class="card-name">Forge</span></span>
+            <span class="card-desc">A round badge with a kettlebell at the centre and an arrow cut into it.</span>
+          </span>
+        </button>
+        <button type="button" class="card" data-code="A4" data-name="Stages" data-lockup="l-stages" data-vb="0 0 372 190" aria-pressed="false" style="--acc-d:#86DB4A;--acc-l:#3E9E1C">
+          <span class="preview"><svg viewBox="0 0 372 190" aria-hidden="true" focusable="false"><use href="#l-stages"/></svg></span>
+          <span class="badge" aria-hidden="true">+</span>
+          <span class="card-body">
+            <span class="card-title"><span class="code">A4</span><span class="card-name">Stages</span></span>
+            <span class="card-desc">Three chevrons like rank stripes, getting brighter as they rise.</span>
+          </span>
+        </button>
+        <button type="button" class="card" data-code="A5" data-name="Loaded Bar" data-lockup="l-bar" data-vb="0 0 480 246" aria-pressed="false" style="--acc-d:#FF7A1A;--acc-l:#E2560C">
+          <span class="preview"><svg viewBox="0 0 480 246" aria-hidden="true" focusable="false"><use href="#l-bar"/></svg></span>
+          <span class="badge" aria-hidden="true">+</span>
+          <span class="card-body">
+            <span class="card-title"><span class="code">A5</span><span class="card-name">Loaded Bar</span></span>
+            <span class="card-desc">LEVEL and UP separated by a loaded barbell. Lettering only.</span>
+          </span>
+        </button>
+        <button type="button" class="card" data-code="A6" data-name="Apex" data-lockup="l-apex" data-vb="0 0 516 200" aria-pressed="false" style="--acc-d:#D8B25A;--acc-l:#8A6B1C">
+          <span class="preview"><svg viewBox="0 0 516 200" aria-hidden="true" focusable="false"><use href="#l-apex"/></svg></span>
+          <span class="badge" aria-hidden="true">+</span>
+          <span class="card-body">
+            <span class="card-title"><span class="code">A6</span><span class="card-name">Apex</span></span>
+            <span class="card-desc">A hexagon, like a hex dumbbell, around an LU monogram. Premium gold.</span>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <section class="set" aria-labelledby="set-b-title">
+      <div class="set-head">
+        <div>
+          <h2 id="set-b-title">Set B <span>· Fresh ideas</span></h2>
+          <p>Six original concepts, each built around a small story.</p>
+        </div>
+        <a class="set-link" href="Level%20Up%20Logo%20Concepts%20-%201.html">View the full Set B presentation</a>
+      </div>
+      <div class="grid">
+        <button type="button" class="card" data-code="B1" data-name="Press Up" data-lockup="l-pressup" data-vb="0 0 496 180" aria-pressed="false" style="--acc-d:#FF3D8F;--acc-l:#D4006A">
+          <span class="preview"><svg viewBox="0 0 496 180" aria-hidden="true" focusable="false"><use href="#l-pressup"/></svg></span>
+          <span class="badge" aria-hidden="true">+</span>
+          <span class="card-body">
+            <span class="card-title"><span class="code">B1</span><span class="card-name">Press Up</span></span>
+            <span class="card-desc">A game-controller button pad with the up button lit. It also reads as a health cross.</span>
+          </span>
+        </button>
+        <button type="button" class="card" data-code="B2" data-name="Box Jump" data-lockup="l-boxjump" data-vb="0 0 490 176" aria-pressed="false" style="--acc-d:#2ED3B7;--acc-l:#008C7A">
+          <span class="preview"><svg viewBox="0 0 490 176" aria-hidden="true" focusable="false"><use href="#l-boxjump"/></svg></span>
+          <span class="badge" aria-hidden="true">+</span>
+          <span class="card-body">
+            <span class="card-title"><span class="code">B2</span><span class="card-name">Box Jump</span></span>
+            <span class="card-desc">Plyo boxes of rising height, with a client jumping onto the tallest.</span>
+          </span>
+        </button>
+        <button type="button" class="card" data-code="B3" data-name="Contour" data-lockup="l-contour" data-vb="0 0 400 274" aria-pressed="false" style="--acc-d:#6F8BFF;--acc-l:#2F5BFF">
+          <span class="preview"><svg viewBox="0 0 400 274" aria-hidden="true" focusable="false"><use href="#l-contour"/></svg></span>
+          <span class="badge" aria-hidden="true">+</span>
+          <span class="card-body">
+            <span class="card-title"><span class="code">B3</span><span class="card-name">Contour</span></span>
+            <span class="card-desc">Map contour lines climbing to a summit. They also look like a fingerprint.</span>
+          </span>
+        </button>
+        <button type="button" class="card" data-code="B4" data-name="Scoreboard" data-lockup="l-scoreboard" data-vb="0 0 522 160" aria-pressed="false" style="--acc-d:#FF2A1F;--acc-l:#E1140A">
+          <span class="preview"><svg viewBox="0 0 522 160" aria-hidden="true" focusable="false"><use href="#l-scoreboard"/></svg></span>
+          <span class="badge" aria-hidden="true">+</span>
+          <span class="card-body">
+            <span class="card-title"><span class="code">B4</span><span class="card-name">Scoreboard</span></span>
+            <span class="card-desc">LEVEL UP in red lights, like the interval timer on a gym wall.</span>
+          </span>
+        </button>
+        <button type="button" class="card" data-code="B5" data-name="Exponent" data-lockup="l-exponent" data-vb="0 0 470 190" aria-pressed="false" style="--acc-d:#9B85FF;--acc-l:#5B3FE0">
+          <span class="preview"><svg viewBox="0 0 470 190" aria-hidden="true" focusable="false"><use href="#l-exponent"/></svg></span>
+          <span class="badge" aria-hidden="true">+</span>
+          <span class="card-body">
+            <span class="card-title"><span class="code">B5</span><span class="card-name">Exponent</span></span>
+            <span class="card-desc">UP raised like a power in maths, so the word itself goes up.</span>
+          </span>
+        </button>
+        <button type="button" class="card" data-code="B6" data-name="Signature" data-lockup="l-signature" data-vb="0 0 464 224" aria-pressed="false" style="--acc-d:#FFB020;--acc-l:#B86E00">
+          <span class="preview"><svg viewBox="0 0 464 224" aria-hidden="true" focusable="false"><use href="#l-signature"/></svg></span>
+          <span class="badge" aria-hidden="true">+</span>
+          <span class="card-body">
+            <span class="card-title"><span class="code">B6</span><span class="card-name">Signature</span></span>
+            <span class="card-desc">A sports-jersey script with a swept underline.</span>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <section class="send" id="send" aria-labelledby="send-title">
+      <div>
+        <h2 id="send-title">Send your choice</h2>
+        <p class="send-intro">Your picks, in order of preference. Tap a logo again to remove it.</p>
+        <p class="empty" id="pick-empty">No logos picked yet. Tap the ones you like above.</p>
+        <ol class="picks" id="pick-list"></ol>
+        <button type="button" class="btn" id="pick-clear" aria-disabled="true">Clear picks</button>
+      </div>
+      <div class="form">
+        <div class="field">
+          <label for="note">Comments (optional)</label>
+          <textarea id="note" rows="3" placeholder="Colours, wording, anything you'd change"></textarea>
+        </div>
+        <div class="field">
+          <label for="client-name">Your name (optional)</label>
+          <input id="client-name" type="text" autocomplete="name">
+        </div>
+        <div class="actions">
+          <a class="btn btn-wa" id="send-wa" href="#" target="_blank" rel="noopener" aria-disabled="true">Send on WhatsApp</a>
+          <a class="btn btn-dark" id="send-mail" href="#" aria-disabled="true">Send by email</a>
+          <button type="button" class="btn" id="send-copy" aria-disabled="true">Copy message</button>
+        </div>
+        <p class="status" id="send-status" aria-live="polite"></p>
+        <div class="field">
+          <label for="msg-preview">Message preview</label>
+          <textarea id="msg-preview" rows="6" readonly></textarea>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <p class="foot">These are early concepts. Once a direction is chosen, it will be refined and supplied as final artwork.</p>
+  <noscript><p class="foot">Turn on JavaScript to pick logos and send your choice.</p></noscript>
+</div>
+
+<div class="bar" id="bar" hidden>
+  <span class="bar-text" id="bar-text"></span>
+  <a class="btn btn-dark" href="#send">Send choice</a>
+</div>
+
+<script>
+(() => {
+  // Optional: fill these in so replies come straight to you.
+  const OWNER_WHATSAPP = ''; // country code + number, digits only, e.g. '919876543210'
+  const OWNER_EMAIL = '';    // e.g. 'you@example.com'
+  const STORE = 'levelup-logo-picks';
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const make = (tag, attrs) => {
+    const node = document.createElementNS(NS, tag);
+    for (const k in attrs) node.setAttribute(k, attrs[k]);
+    return node;
+  };
+
+  const glyphs = {
+    L: ['10000', '10000', '10000', '10000', '10000', '10000', '11111'],
+    E: ['11111', '10000', '10000', '11110', '10000', '10000', '11111'],
+    V: ['10001', '10001', '10001', '10001', '10001', '01010', '00100'],
+    U: ['10001', '10001', '10001', '10001', '10001', '10001', '01110'],
+    P: ['11110', '10001', '10001', '11110', '10000', '10000', '10000']
+  };
+  function matrix(id, text, x0, y0, pitch, rOn, rOff) {
+    const host = document.getElementById(id);
+    const off = make('g', { style: 'fill:var(--acc)', opacity: '0.16' });
+    const on = make('g', { style: 'fill:var(--acc)', filter: 'url(#led-glow)' });
+    [...text].forEach((ch, i) => {
+      const rows = glyphs[ch];
+      if (!rows) return;
+      rows.forEach((row, r) => [...row].forEach((bit, c) => {
+        const lit = bit === '1';
+        (lit ? on : off).appendChild(make('circle', { cx: x0 + (i * 6 + c) * pitch, cy: y0 + r * pitch, r: lit ? rOn : rOff }));
+      }));
+    });
+    host.append(off, on);
+  }
+  function ring(R, cx, cy, ph, gapAt, gapSpan) {
+    const steps = 120;
+    const a0 = gapSpan ? gapAt + gapSpan / 2 : 0;
+    const a1 = gapSpan ? gapAt - gapSpan / 2 + 2 * Math.PI : 2 * Math.PI;
+    let d = '';
+    for (let k = 0; k <= steps; k++) {
+      const t = a0 + (a1 - a0) * k / steps;
+      const r = R * (1 + 0.055 * Math.sin(3 * t + ph) + 0.035 * Math.cos(2 * t - 0.5));
+      d += (k ? 'L' : 'M') + (cx + r * Math.cos(t)).toFixed(2) + ' ' + (cy + r * Math.sin(t)).toFixed(2);
+    }
+    return gapSpan ? d : d + 'Z';
+  }
+  function contour(id, radii, shift, gaps, summitR) {
+    const host = document.getElementById(id);
+    radii.forEach((R, i) => {
+      const [at, span] = gaps[i] || [0, 0];
+      host.appendChild(make('path', { d: ring(R, 1.2 * i, -shift * i, 0.9 + 0.12 * i, at, span) }));
+    });
+    const n = radii.length;
+    host.appendChild(make('path', { d: ring(summitR, 1.2 * n, -shift * n, 0.9 + 0.12 * n, 0, 0), stroke: 'none', style: 'fill:var(--acc)' }));
+  }
+  matrix('matrix-full', 'LEVEL UP', 31, 31, 10, 3.9, 3.3);
+  contour('contour-fine', [70, 59, 48, 37, 26], 4.2, { 1: [3.49, 0.26], 3: [5.76, 0.22] }, 14);
+
+  const cards = [...document.querySelectorAll('.card')];
+  const byCode = new Map(cards.map(card => [card.dataset.code, card]));
+  const $ = id => document.getElementById(id);
+  const list = $('pick-list'), empty = $('pick-empty'), clear = $('pick-clear');
+  const note = $('note'), clientName = $('client-name');
+  const wa = $('send-wa'), mail = $('send-mail'), copy = $('send-copy');
+  const status = $('send-status'), preview = $('msg-preview');
+  const bar = $('bar'), barText = $('bar-text');
+  const bgDark = $('bg-dark'), bgLight = $('bg-light');
+
+  const state = { picks: [], note: '', name: '', bg: 'dark' };
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORE) || 'null');
+    if (saved) {
+      state.picks = Array.isArray(saved.picks) ? saved.picks.filter(code => byCode.has(code)) : [];
+      state.note = typeof saved.note === 'string' ? saved.note : '';
+      state.name = typeof saved.name === 'string' ? saved.name : '';
+      state.bg = saved.bg === 'light' ? 'light' : 'dark';
+    }
+  } catch (e) { /* storage unavailable: start fresh */ }
+  const save = () => { try { localStorage.setItem(STORE, JSON.stringify(state)); } catch (e) { /* ignore */ } };
+
+  note.value = state.note;
+  clientName.value = state.name;
+
+  const label = code => code + ' ' + byCode.get(code).dataset.name;
+
+  function message() {
+    const lines = ['Level Up logo choice'];
+    state.picks.forEach((code, i) => lines.push((i + 1) + '. ' + label(code)));
+    if (state.note.trim()) lines.push('', 'Comments: ' + state.note.trim());
+    if (state.name.trim()) lines.push('From: ' + state.name.trim());
+    return lines.join('\n');
+  }
+
+  function setDisabled(el, off) {
+    el.setAttribute('aria-disabled', String(off));
+    if (el.tagName === 'A') off ? el.setAttribute('tabindex', '-1') : el.removeAttribute('tabindex');
+  }
+
+  function thumb(card) {
+    const box = document.createElement('span');
+    box.className = 'thumb';
+    box.style.setProperty('--acc', card.style.getPropertyValue('--acc-d'));
+    const svg = make('svg', { viewBox: card.dataset.vb, 'aria-hidden': 'true', focusable: 'false' });
+    svg.appendChild(make('use', { href: '#' + card.dataset.lockup }));
+    box.appendChild(svg);
+    return box;
+  }
+
+  let sendInView = false;
+
+  function render() {
+    cards.forEach(card => {
+      const i = state.picks.indexOf(card.dataset.code);
+      card.setAttribute('aria-pressed', String(i >= 0));
+      card.querySelector('.badge').textContent = i >= 0 ? String(i + 1) : '+';
+    });
+
+    list.replaceChildren(...state.picks.map((code, i) => {
+      const card = byCode.get(code);
+      const li = document.createElement('li');
+      const rank = document.createElement('span');
+      rank.className = 'rank';
+      rank.textContent = i + 1;
+      const text = document.createElement('span');
+      text.className = 'pick-label';
+      const codeEl = document.createElement('span');
+      codeEl.textContent = code;
+      text.append(codeEl, card.dataset.name);
+      const remove = document.createElement('button');
+      remove.type = 'button';
+      remove.className = 'remove';
+      remove.textContent = '×';
+      remove.setAttribute('aria-label', 'Remove ' + label(code));
+      remove.addEventListener('click', () => toggle(code));
+      li.append(rank, thumb(card), text, remove);
+      return li;
+    }));
+
+    const none = state.picks.length === 0;
+    empty.hidden = !none;
+    list.hidden = none;
+    [clear, wa, mail, copy].forEach(el => setDisabled(el, none));
+
+    const text = message();
+    preview.value = none ? '' : text;
+    wa.href = 'https://wa.me/' + OWNER_WHATSAPP.replace(/\D/g, '') + '?text=' + encodeURIComponent(text);
+    mail.href = 'mailto:' + OWNER_EMAIL + '?subject=' + encodeURIComponent('Level Up logo choice') + '&body=' + encodeURIComponent(text);
+
+    barText.textContent = none ? '' : state.picks.length + ' picked: ' + state.picks.map(label).join(', ');
+    const showBar = !none && !sendInView;
+    bar.hidden = !showBar;
+    document.body.classList.toggle('has-bar', showBar);
+
+    document.body.dataset.bg = state.bg;
+    bgDark.setAttribute('aria-pressed', String(state.bg === 'dark'));
+    bgLight.setAttribute('aria-pressed', String(state.bg === 'light'));
+  }
+
+  function toggle(code) {
+    const i = state.picks.indexOf(code);
+    if (i >= 0) state.picks.splice(i, 1);
+    else state.picks.push(code);
+    status.textContent = '';
+    save();
+    render();
+  }
+
+  cards.forEach(card => card.addEventListener('click', () => toggle(card.dataset.code)));
+  clear.addEventListener('click', () => {
+    if (!state.picks.length) return;
+    state.picks = [];
+    status.textContent = '';
+    save();
+    render();
+  });
+  note.addEventListener('input', () => { state.note = note.value; save(); render(); });
+  clientName.addEventListener('input', () => { state.name = clientName.value; save(); render(); });
+  bgDark.addEventListener('click', () => { state.bg = 'dark'; save(); render(); });
+  bgLight.addEventListener('click', () => { state.bg = 'light'; save(); render(); });
+
+  [wa, mail].forEach(link => link.addEventListener('click', event => {
+    if (!state.picks.length) event.preventDefault();
+  }));
+
+  copy.addEventListener('click', async () => {
+    if (!state.picks.length) return;
+    try {
+      await navigator.clipboard.writeText(message());
+      status.textContent = 'Copied. Paste it into a message to send it.';
+    } catch (e) {
+      preview.focus();
+      preview.select();
+      status.textContent = 'Copying was blocked. The message is selected below, so copy it with your keyboard or long-press.';
+    }
+  });
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => {
+      sendInView = entries[0].isIntersecting;
+      render();
+    }, { threshold: 0.15 }).observe($('send'));
+  }
+
+  render();
+})();
+</script>
+</body>
+</html>
