@@ -47,7 +47,7 @@ figcaption{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;align-items:
 /* --tag: accent colour for small text and rules, darker on light grounds so it stays readable.
    --side-hi/--side-lo: the 3D sides of ink-coloured lettering (F10). */
 .t-dark{--bg:#0C0D0E;--bg-hi:#24272B;--ink:#F7F7F3;--ink-lo:#B9BDC1;--sub:#E2E3DE;--tag:var(--mid);--side-hi:#6B7078;--side-lo:#2A2D31}
-.t-cream{--bg:#E9E2D4;--bg-hi:#FBF8F1;--ink:#26282B;--ink-lo:#050506;--sub:#1E1F21;--tag:var(--lo);--side-hi:#A3A8AF;--side-lo:#5C6168}
+.t-cream{--bg:#E9E2D4;--bg-hi:#FBF8F1;--ink:#26282B;--ink-lo:#050506;--sub:#1E1F21;--tag:var(--lo);--side-hi:#A3A8AF;--side-lo:#5C6168;--sil:#1B2033}
 .t-violet{--bg:#150B3E;--bg-hi:#4A2BB0;--ink:#FFFFFF;--ink-lo:#D9D2FF;--sub:#ECE8FF;--tag:var(--mid);--side-hi:#7A6BD6;--side-lo:#3A2A94}
 .t-navy{--bg:#050F24;--bg-hi:#17377A;--ink:#FFFFFF;--ink-lo:#C3D2F0;--sub:#E4EBFA;--tag:var(--mid);--side-hi:#4D6DB8;--side-lo:#16295A}
 .a-lime{--hi:#E2FF5C;--mid:#8FD61C;--lo:#3A860C;--deep:#1E4F06;--brand:#5DB315}
@@ -79,6 +79,7 @@ figcaption{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;align-items:
 <filter id="sf-rough" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="3" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter>
 <filter id="sf-blur6"><feGaussianBlur stdDeviation="6"/></filter>
 <filter id="sf-glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="14"/></filter>
+<filter id="sf-roughSm" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".09" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4" xChannelSelector="R" yChannelSelector="G"/></filter>
 </defs></svg>
 <div class="wrap">
   <p class="back"><a href="./">Back to logo selection</a></p>
