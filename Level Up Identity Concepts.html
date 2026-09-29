@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Level Up Identity Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@800&display=swap">
+<style>
+.back { margin: 0 0 28px; font-size: 14px; font-weight: 700; }
+.back a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+:root {
+  --page: #E8E7E2;
+  --surface: #FAFAF8;
+  --ink: #111214;
+  --muted: #5B5F66;
+  --line: rgba(17, 18, 20, 0.12);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #17181A;
+    --surface: #202124;
+    --ink: #ECEBE7;
+    --muted: #A2A5AB;
+    --line: rgba(236, 235, 231, 0.12);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #17181A;
+  --surface: #202124;
+  --ink: #ECEBE7;
+  --muted: #A2A5AB;
+  --line: rgba(236, 235, 231, 0.12);
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  padding-inline: clamp(16px, 4vw, 44px);
+  padding-block: 56px 88px;
+}
+.wrap { max-width: 1200px; margin: 0 auto; }
+
+.head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 430px);
+  gap: 20px 48px;
+  align-items: end;
+  padding-bottom: 34px;
+  border-bottom: 1px solid var(--line);
+}
+.eyebrow {
+  margin: 0 0 14px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+h1 {
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.lede { margin: 0; color: var(--muted); max-width: 48ch; }
+
+.board { margin-top: 68px; }
+.board-head {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 0 14px;
+  margin-bottom: 18px;
+}
+.num {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.15;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.board-head h2 { margin: 0 0 6px; font-weight: 800; font-size: 30px; line-height: 1.1; letter-spacing: -0.02em; }
+.board-head p { margin: 0; color: var(--muted); max-width: 70ch; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: 340px 250px;
+  gap: 12px;
+}
+.tile {
+  position: relative;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 44px 32px 32px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.tile figcaption {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+.t-hero { grid-column: 1 / 3; padding: 56px 64px 48px; }
+.t-light { background: #F7F6F3; color: #111214; }
+.t-dark { background: #0F1012; color: #F4F4F0; }
+.t-neutral { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+
+.logo { display: block; width: 100%; height: 100%; }
+.t-hero .logo { max-width: 600px; max-height: 190px; }
+.t-side .logo { max-width: 300px; max-height: 150px; }
+.t-side .logo.tall { max-height: 170px; }
+
+.icons { display: flex; align-items: flex-end; gap: 20px; }
+.icons svg { display: block; }
+.icons .lg { width: 112px; height: 112px; filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2)); }
+.icons .sm { width: 48px; height: 48px; }
+
+.pal { flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 14px; padding: 46px 20px 20px; }
+.swatches { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 14px; }
+.sw { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 0 10px; align-items: center; }
+.chip { grid-row: 1 / 3; width: 34px; height: 34px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--line); }
+.sw b { font-size: 13px; font-weight: 700; line-height: 1.2; }
+.sw code { font-family: inherit; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.type-note { margin: auto 0 0; font-size: 12.5px; color: var(--muted); }
+
+.foot { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; max-width: 72ch; }
+
+@media (max-width: 1000px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-auto-rows: minmax(240px, auto); }
+  .t-hero { grid-column: 1 / -1; min-height: 300px; }
+}
+@media (max-width: 820px) {
+  .head { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 620px) {
+  body { padding-block: 32px 56px; }
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .t-hero { min-height: 230px; padding: 48px 20px 32px; }
+  .tile { min-height: 220px; padding: 44px 20px 24px; }
+  .board-head { grid-template-columns: 40px minmax(0, 1fr); }
+  .num { font-size: 24px; }
+  .icons .lg { width: 96px; height: 96px; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- Custom lettering, cap height 100. Heavy weight. -->
+    <path id="hL" d="M0 0H26V76H62V100H0Z"/>
+    <path id="hE" d="M0 0H64V24H26V38H58V62H26V76H66V100H0Z"/>
+    <path id="hV" d="M0 0H27.8L46 47.9L64.2 0H92L54 100H38Z"/>
+    <path id="hU" d="M0 0H26V63.5A12 12 0 0 0 50 63.5V0H76V63.5A38 38 0 0 1 0 63.5Z"/>
+    <path id="hP" fill-rule="evenodd" d="M0 0H40A32 32 0 0 1 40 64H26V100H0ZM26 24H40A8 8 0 0 1 40 40H26Z"/>
+    <!-- Medium weight, with a high-waisted E -->
+    <path id="mL" d="M0 0H12V88H54V100H0Z"/>
+    <path id="mEh" d="M0 0H56V12H12V30H50V42H12V88H58V100H0Z"/>
+    <path id="mV" d="M0 0H12.8L40 73.5L67.2 0H80L43 100H37Z"/>
+    <path id="mU" d="M0 0H12V68A21 21 0 0 0 54 68V0H66V68A33 33 0 0 1 0 68Z"/>
+    <path id="mP" fill-rule="evenodd" d="M0 0H31A29 29 0 0 1 31 58H12V100H0ZM12 12H31A17 17 0 0 1 31 46H12Z"/>
+
+    <g id="wmH-level"><use href="#hL"/><use href="#hE" x="72"/><use href="#hV" x="142"/><use href="#hE" x="238"/><use href="#hL" x="314"/></g>
+    <g id="wmH-up"><use href="#hU"/><use href="#hP" x="86"/></g>
+    <g id="wmH"><use href="#wmH-level"/><use href="#wmH-up" x="404"/></g>
+    <g id="wmH-lu"><use href="#hL"/><use href="#hU" x="72"/></g>
+    <g id="wmA"><use href="#mL"/><use href="#mEh" x="86"/><use href="#mV" x="170"/><use href="#mEh" x="276"/><use href="#mL" x="366"/><use href="#mU" x="480"/><use href="#mP" x="578"/></g>
+    <g id="monoA"><use href="#mL"/><use href="#mU" x="68" y="-12"/></g>
+
+    <clipPath id="clipLow"><rect x="-60" y="50" width="760" height="70"/></clipPath>
+    <clipPath id="clipHigh"><rect x="-60" y="-20" width="760" height="70"/></clipPath>
+
+    <!-- 01 Lift -->
+    <symbol id="kMark" viewBox="0 -8 108 108">
+      <path fill="currentColor" d="M0 37H30V70H100V100H0Z"/>
+      <path style="fill:var(--acc)" d="M8-8H108V55H78V22H8Z"/>
+    </symbol>
+    <g id="lKey">
+      <use href="#kMark" x="12" y="12" width="108" height="108"/>
+      <use href="#wmH" transform="translate(150 28) scale(.52)" fill="currentColor"/>
+      <text x="150" y="104" font-family="Manrope, sans-serif" font-size="12.5" font-weight="700" textLength="292" fill="currentColor" opacity=".72">PERSONALISED FITNESS STUDIO</text>
+    </g>
+    <g id="lKeyS">
+      <use href="#kMark" x="112" y="12" width="96" height="96"/>
+      <use href="#wmH" transform="translate(30.75 132) scale(.46)" fill="currentColor"/>
+      <text x="160" y="204" text-anchor="middle" font-family="Manrope, sans-serif" font-size="11.5" font-weight="700" textLength="258" fill="currentColor" opacity=".72">PERSONALISED FITNESS STUDIO</text>
+    </g>
+
+    <!-- 02 Climb -->
+    <g id="lVert">
+      <use href="#wmH-level" transform="translate(16 74)" fill="currentColor"/>
+      <g transform="translate(406 174) rotate(-90)" style="fill:var(--acc)"><use href="#wmH-up"/></g>
+      <text x="16" y="206" font-family="Manrope, sans-serif" font-size="15" font-weight="800" textLength="376" fill="currentColor" opacity=".72">PERSONALISED FITNESS STUDIO</text>
+    </g>
+
+    <!-- 03 Split Level -->
+    <g id="splitWord">
+      <g transform="skewX(-11)">
+        <use href="#wmH" clip-path="url(#clipLow)"/>
+        <g transform="translate(6 -10)"><use href="#wmH" clip-path="url(#clipHigh)"/></g>
+      </g>
+    </g>
+    <g id="lSplit">
+      <use href="#splitWord" transform="translate(26 26) scale(.6)" fill="currentColor"/>
+      <text transform="translate(26 118) skewX(-11)" x="-11.6" y="0" font-family="Manrope, sans-serif" font-size="12.5" font-weight="800" textLength="318" fill="currentColor" opacity=".72">PERSONALISED FITNESS STUDIO</text>
+    </g>
+
+    <!-- 04 Boutique -->
+    <g id="lAtelier">
+      <use href="#wmA" transform="translate(36.7 20) scale(.7)" fill="currentColor"/>
+      <path d="M36.7 120.5H117M403 120.5H483.3" fill="none" style="stroke:var(--acc)" stroke-width="1.2"/>
+      <text x="260" y="125" text-anchor="middle" font-family="Manrope, sans-serif" font-size="11.5" font-weight="600" textLength="262" fill="currentColor" opacity=".8">PERSONALISED FITNESS STUDIO</text>
+    </g>
+    <path id="sealPath" d="M25.5 120A94.5 94.5 0 1 1 214.5 120A94.5 94.5 0 1 1 25.5 120"/>
+    <g id="sealA">
+      <circle cx="120" cy="120" r="112" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="120" cy="120" r="84" fill="none" stroke="currentColor" stroke-width="1"/>
+      <text font-family="Manrope, sans-serif" font-size="12.5" font-weight="700" fill="currentColor"><textPath href="#sealPath" textLength="585" lengthAdjust="spacing">LEVEL UP · PERSONALISED FITNESS STUDIO ·</textPath></text>
+      <use href="#monoA" transform="translate(82.5 95.4) scale(.56)" fill="currentColor"/>
+    </g>
+
+    <!-- 05 You -->
+    <symbol id="yMark" viewBox="-6 -22 112 136">
+      <path d="M14 36V58A36 36 0 0 0 86 58V36" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round"/>
+      <circle cx="50" cy="0" r="16" style="fill:var(--acc)"/>
+    </symbol>
+    <g id="lYou">
+      <use href="#yMark" x="14" y="14" width="90.6" height="110"/>
+      <text x="128" y="88" font-family="'Plus Jakarta Sans', sans-serif" font-size="64" font-weight="800" letter-spacing="-1.5" fill="currentColor">level up</text>
+      <text x="130" y="122" font-family="Manrope, sans-serif" font-size="11.5" font-weight="700" textLength="223" fill="currentColor" opacity=".72">PERSONALISED FITNESS STUDIO</text>
+    </g>
+    <g id="lYouS">
+      <use href="#yMark" x="118" y="10" width="84" height="102"/>
+      <text x="160" y="176" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="56" font-weight="800" letter-spacing="-1.2" fill="currentColor">level up</text>
+      <text x="160" y="212" text-anchor="middle" font-family="Manrope, sans-serif" font-size="11" font-weight="700" textLength="196" fill="currentColor" opacity=".72">PERSONALISED FITNESS STUDIO</text>
+    </g>
+
+    <!-- App icons -->
+    <symbol id="iKey" viewBox="0 0 100 100">
+      <rect width="100" height="100" rx="22" fill="#0B0D12"/>
+      <use href="#kMark" x="21" y="21" width="58" height="58" style="color:#FFFFFF;--acc:#6180FF"/>
+    </symbol>
+    <symbol id="iVert" viewBox="0 0 100 100">
+      <rect width="100" height="100" rx="22" fill="#E1140A"/>
+      <g transform="translate(30.7 20) scale(.38)" fill="#FFFFFF"><g transform="translate(0 158) rotate(-90)"><use href="#wmH-up"/></g></g>
+    </symbol>
+    <symbol id="iSplit" viewBox="0 0 100 100">
+      <rect width="100" height="100" rx="22" fill="#D4FF3A"/>
+      <g transform="translate(26.8 34.4) scale(.34)" fill="#111111">
+        <g transform="skewX(-11)">
+          <use href="#wmH-lu" clip-path="url(#clipLow)"/>
+          <g transform="translate(6 -10)"><use href="#wmH-lu" clip-path="url(#clipHigh)"/></g>
+        </g>
+      </g>
+    </symbol>
+    <symbol id="iAtelier" viewBox="0 0 100 100">
+      <rect width="100" height="100" rx="22" fill="#14392D"/>
+      <circle cx="50" cy="50" r="40" fill="none" stroke="#E8DDC7" stroke-width="1.5"/>
+      <use href="#monoA" transform="translate(21.9 31.5) scale(.42)" fill="#E8DDC7"/>
+    </symbol>
+    <symbol id="iYou" viewBox="0 0 100 100">
+      <rect width="100" height="100" rx="22" fill="#0B0D12"/>
+      <use href="#yMark" x="25.3" y="20" width="49.4" height="60" style="color:#FFFFFF;--acc:#22D3BE"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+
+  <p class="back"><a href="./">Back to logo selection</a></p>
+
+  <header class="head">
+    <div>
+      <p class="eyebrow">Level Up · Personalised Fitness Studio · Round 3</p>
+      <h1>Identity concepts</h1>
+    </div>
+    <p class="lede">Five directions, each presented the way a finished identity is delivered: the primary logo, a one-colour version on the brand colour, a second layout, an app icon and a small palette.</p>
+  </header>
+
+  <!-- 01 -->
+  <section class="board" aria-labelledby="b1">
+    <div class="board-head">
+      <span class="num">01</span>
+      <div>
+        <h2 id="b1">Lift</h2>
+        <p>LEVEL begins and ends with L. The two L's lock together into a square, and the second one is lifted a step, which turns the square into LEVEL UP. The corners also read as a focus frame, for training built around one person.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile t-hero t-light" style="--acc:#2B4DFF">
+        <figcaption>Primary</figcaption>
+        <svg class="logo" viewBox="0 0 454 132" role="img" aria-label="Lift logo"><use href="#lKey"/></svg>
+      </figure>
+      <figure class="tile t-side" style="background:#2B4DFF;color:#FFFFFF;--acc:#FFFFFF">
+        <figcaption>One colour on Cobalt</figcaption>
+        <svg class="logo" viewBox="0 0 454 132" role="img" aria-label="Lift logo in white on cobalt"><use href="#lKey"/></svg>
+      </figure>
+      <figure class="tile t-side t-dark" style="--acc:#6180FF">
+        <figcaption>Stacked</figcaption>
+        <svg class="logo tall" viewBox="0 0 320 222" role="img" aria-label="Lift stacked logo on black"><use href="#lKeyS"/></svg>
+      </figure>
+      <figure class="tile t-neutral">
+        <figcaption>App icon</figcaption>
+        <div class="icons">
+          <svg class="lg" viewBox="0 0 100 100" role="img" aria-label="Lift app icon"><use href="#iKey" width="100" height="100"/></svg>
+          <svg class="sm" viewBox="0 0 100 100" aria-hidden="true"><use href="#iKey" width="100" height="100"/></svg>
+        </div>
+      </figure>
+      <figure class="tile t-neutral pal">
+        <figcaption>Colour and type</figcaption>
+        <div class="swatches">
+          <div class="sw"><span class="chip" style="background:#0B0D12"></span><b>Ink</b><code>#0B0D12</code></div>
+          <div class="sw"><span class="chip" style="background:#2B4DFF"></span><b>Cobalt</b><code>#2B4DFF</code></div>
+          <div class="sw"><span class="chip" style="background:#6180FF"></span><b>Cobalt light</b><code>#6180FF</code></div>
+          <div class="sw"><span class="chip" style="background:#EEF1F6"></span><b>Mist</b><code>#EEF1F6</code></div>
+        </div>
+        <p class="type-note">Lettering custom drawn · Tagline in Manrope Bold</p>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section class="board" aria-labelledby="b2">
+    <div class="board-head">
+      <span class="num">02</span>
+      <div>
+        <h2 id="b2">Climb</h2>
+        <p>LEVEL runs along the baseline, then UP turns and climbs. The lockup traces the idea itself: along the level, then up. Set in the black and red of the GymMobile app.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile t-hero t-light" style="--acc:#E1140A">
+        <figcaption>Primary</figcaption>
+        <svg class="logo" viewBox="0 0 524 222" role="img" aria-label="Climb logo"><use href="#lVert"/></svg>
+      </figure>
+      <figure class="tile t-side" style="background:#E1140A;color:#FFFFFF;--acc:#FFFFFF">
+        <figcaption>One colour on Red</figcaption>
+        <svg class="logo" viewBox="0 0 524 222" role="img" aria-label="Climb logo in white on red"><use href="#lVert"/></svg>
+      </figure>
+      <figure class="tile t-side t-dark" style="--acc:#FF2D20">
+        <figcaption>On black</figcaption>
+        <svg class="logo" viewBox="0 0 524 222" role="img" aria-label="Climb logo on black"><use href="#lVert"/></svg>
+      </figure>
+      <figure class="tile t-neutral">
+        <figcaption>App icon</figcaption>
+        <div class="icons">
+          <svg class="lg" viewBox="0 0 100 100" role="img" aria-label="Climb app icon"><use href="#iVert" width="100" height="100"/></svg>
+          <svg class="sm" viewBox="0 0 100 100" aria-hidden="true"><use href="#iVert" width="100" height="100"/></svg>
+        </div>
+      </figure>
+      <figure class="tile t-neutral pal">
+        <figcaption>Colour and type</figcaption>
+        <div class="swatches">
+          <div class="sw"><span class="chip" style="background:#111214"></span><b>Ink</b><code>#111214</code></div>
+          <div class="sw"><span class="chip" style="background:#E1140A"></span><b>Brand red</b><code>#E1140A</code></div>
+          <div class="sw"><span class="chip" style="background:#FF2D20"></span><b>Red on black</b><code>#FF2D20</code></div>
+          <div class="sw"><span class="chip" style="background:#F5F5F2"></span><b>Paper</b><code>#F5F5F2</code></div>
+        </div>
+        <p class="type-note">Lettering custom drawn · Tagline in Manrope Bold</p>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section class="board" aria-labelledby="b3">
+    <div class="board-head">
+      <span class="num">03</span>
+      <div>
+        <h2 id="b3">Split Level</h2>
+        <p>The wordmark is cut at mid-height and the top half is lifted and pushed forward, like a jump caught in motion. It uses one colour only, so it prints cleanly on kit, walls and equipment, with Volt as the supporting colour.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile t-hero t-light">
+        <figcaption>Primary</figcaption>
+        <svg class="logo" viewBox="0 0 384 134" role="img" aria-label="Split Level logo"><use href="#lSplit"/></svg>
+      </figure>
+      <figure class="tile t-side" style="background:#D4FF3A;color:#111111">
+        <figcaption>On Volt</figcaption>
+        <svg class="logo" viewBox="0 0 384 134" role="img" aria-label="Split Level logo on volt"><use href="#lSplit"/></svg>
+      </figure>
+      <figure class="tile t-side t-dark">
+        <figcaption>On black</figcaption>
+        <svg class="logo" viewBox="0 0 384 134" role="img" aria-label="Split Level logo on black"><use href="#lSplit"/></svg>
+      </figure>
+      <figure class="tile t-neutral">
+        <figcaption>App icon</figcaption>
+        <div class="icons">
+          <svg class="lg" viewBox="0 0 100 100" role="img" aria-label="Split Level app icon"><use href="#iSplit" width="100" height="100"/></svg>
+          <svg class="sm" viewBox="0 0 100 100" aria-hidden="true"><use href="#iSplit" width="100" height="100"/></svg>
+        </div>
+      </figure>
+      <figure class="tile t-neutral pal">
+        <figcaption>Colour and type</figcaption>
+        <div class="swatches">
+          <div class="sw"><span class="chip" style="background:#111111"></span><b>Ink</b><code>#111111</code></div>
+          <div class="sw"><span class="chip" style="background:#D4FF3A"></span><b>Volt</b><code>#D4FF3A</code></div>
+          <div class="sw"><span class="chip" style="background:#F4F4F0"></span><b>Chalk</b><code>#F4F4F0</code></div>
+          <div class="sw"><span class="chip" style="background:#8A8D93"></span><b>Steel</b><code>#8A8D93</code></div>
+        </div>
+        <p class="type-note">Lettering custom drawn, 11° italic · Tagline in Manrope ExtraBold</p>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section class="board" aria-labelledby="b4">
+    <div class="board-head">
+      <span class="num">04</span>
+      <div>
+        <h2 id="b4">Boutique</h2>
+        <p>A quieter, premium direction for a members-style studio. The lettering has high-waisted E's, a small nod to lifting, and the seal carries an LU monogram in which the U sits a step higher than the L.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile t-hero" style="background:#F4EFE5;color:#14392D;--acc:#B08A4E">
+        <figcaption>Primary</figcaption>
+        <svg class="logo" viewBox="0 0 520 146" role="img" aria-label="Boutique logo"><use href="#lAtelier"/></svg>
+      </figure>
+      <figure class="tile t-side" style="background:#14392D;color:#E8DDC7">
+        <figcaption>Seal on Forest</figcaption>
+        <svg class="logo tall" viewBox="0 0 240 240" role="img" aria-label="Boutique seal on forest green"><use href="#sealA"/></svg>
+      </figure>
+      <figure class="tile t-side t-dark" style="color:#E8DDC7;--acc:#B08A4E">
+        <figcaption>On black</figcaption>
+        <svg class="logo" viewBox="0 0 520 146" role="img" aria-label="Boutique logo on black"><use href="#lAtelier"/></svg>
+      </figure>
+      <figure class="tile t-neutral">
+        <figcaption>App icon</figcaption>
+        <div class="icons">
+          <svg class="lg" viewBox="0 0 100 100" role="img" aria-label="Boutique app icon"><use href="#iAtelier" width="100" height="100"/></svg>
+          <svg class="sm" viewBox="0 0 100 100" aria-hidden="true"><use href="#iAtelier" width="100" height="100"/></svg>
+        </div>
+      </figure>
+      <figure class="tile t-neutral pal">
+        <figcaption>Colour and type</figcaption>
+        <div class="swatches">
+          <div class="sw"><span class="chip" style="background:#14392D"></span><b>Forest</b><code>#14392D</code></div>
+          <div class="sw"><span class="chip" style="background:#E8DDC7"></span><b>Sand</b><code>#E8DDC7</code></div>
+          <div class="sw"><span class="chip" style="background:#F4EFE5"></span><b>Cream</b><code>#F4EFE5</code></div>
+          <div class="sw"><span class="chip" style="background:#B08A4E"></span><b>Brass</b><code>#B08A4E</code></div>
+        </div>
+        <p class="type-note">Lettering custom drawn, high-waisted E · Tagline in Manrope SemiBold</p>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 05 -->
+  <section class="board" aria-labelledby="b5">
+    <div class="board-head">
+      <span class="num">05</span>
+      <div>
+        <h2 id="b5">You</h2>
+        <p>The U of UP stands for you. A dot lifted clear of it is the client, raised up, and the whole shape also reads as someone with both arms in the air.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile t-hero t-light" style="color:#0B0D12;--acc:#00897B">
+        <figcaption>Primary</figcaption>
+        <svg class="logo" viewBox="0 0 440 140" role="img" aria-label="You logo"><use href="#lYou"/></svg>
+      </figure>
+      <figure class="tile t-side" style="background:#00897B;color:#FFFFFF;--acc:#FFFFFF">
+        <figcaption>One colour on Teal</figcaption>
+        <svg class="logo" viewBox="0 0 440 140" role="img" aria-label="You logo in white on teal"><use href="#lYou"/></svg>
+      </figure>
+      <figure class="tile t-side t-dark" style="--acc:#22D3BE">
+        <figcaption>Stacked</figcaption>
+        <svg class="logo tall" viewBox="0 0 320 228" role="img" aria-label="You stacked logo on black"><use href="#lYouS"/></svg>
+      </figure>
+      <figure class="tile t-neutral">
+        <figcaption>App icon</figcaption>
+        <div class="icons">
+          <svg class="lg" viewBox="0 0 100 100" role="img" aria-label="You app icon"><use href="#iYou" width="100" height="100"/></svg>
+          <svg class="sm" viewBox="0 0 100 100" aria-hidden="true"><use href="#iYou" width="100" height="100"/></svg>
+        </div>
+      </figure>
+      <figure class="tile t-neutral pal">
+        <figcaption>Colour and type</figcaption>
+        <div class="swatches">
+          <div class="sw"><span class="chip" style="background:#0B0D12"></span><b>Ink</b><code>#0B0D12</code></div>
+          <div class="sw"><span class="chip" style="background:#00897B"></span><b>Teal</b><code>#00897B</code></div>
+          <div class="sw"><span class="chip" style="background:#22D3BE"></span><b>Aqua</b><code>#22D3BE</code></div>
+          <div class="sw"><span class="chip" style="background:#F2F5F4"></span><b>Cloud</b><code>#F2F5F4</code></div>
+        </div>
+        <p class="type-note">Wordmark in Plus Jakarta Sans ExtraBold · Tagline in Manrope Bold</p>
+      </figure>
+    </div>
+  </section>
+
+  <p class="foot">These are concepts for discussion. The chosen direction will be refined and delivered as a full logo set: horizontal, stacked, symbol-only and one-colour versions, in SVG and PNG.</p>
+</div>
+</body>
+</html>

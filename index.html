@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Level Up Logo Selection</title>
-<meta name="description" content="Twelve logo ideas for Level Up Personalised Fitness Studio. Tap the ones you like and send your choice.">
+<meta name="description" content="Seventeen logo ideas in three sets for Level Up Personalised Fitness Studio. Tap the ones you like and send your choice.">
 <meta property="og:title" content="Choose the Level Up logo">
-<meta property="og:description" content="Twelve logo ideas for Level Up Personalised Fitness Studio. Tap the ones you like and send your choice.">
+<meta property="og:description" content="Seventeen logo ideas in three sets for Level Up Personalised Fitness Studio. Tap the ones you like and send your choice.">
 <meta property="og:type" content="website">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F1F0EC">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#131416">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,900;1,900&family=Barlow:wght@400;500;600;800&family=Bricolage+Grotesque:wght@800&family=Jost:wght@500&family=Outfit:wght@400;500;600;700;800&family=Space+Mono:wght@700&family=Unbounded:wght@800&family=Yellowtail&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,900;1,900&family=Barlow:wght@400;500;600;800&family=Bricolage+Grotesque:wght@800&family=Jost:wght@500&family=Outfit:wght@400;500;600;700;800&family=Space+Mono:wght@700&family=Unbounded:wght@800&family=Yellowtail&family=Manrope:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@800&display=swap">
 <style>
 :root {
   --page: #F1F0EC;
@@ -149,11 +149,11 @@ h1 {
   height: 200px;
   padding: 26px 22px;
   background: var(--panel-dark);
-  color: var(--on-dark);
+  color: var(--ink-d, var(--on-dark));
   --acc: var(--acc-d);
   --bg: var(--panel-dark);
 }
-[data-bg="light"] .preview { background: var(--panel-light); color: var(--on-light); --acc: var(--acc-l); --bg: var(--panel-light); }
+[data-bg="light"] .preview { background: var(--panel-light); color: var(--ink-l, var(--on-light)); --acc: var(--acc-l); --bg: var(--panel-light); }
 .preview svg { display: block; width: 100%; height: 100%; max-width: 320px; }
 
 .badge {
@@ -308,6 +308,7 @@ h1 {
 
 @media (max-width: 980px) {
   .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid--five .card:last-child { grid-column: 1 / -1; }
 }
 @media (max-width: 760px) {
   .send { grid-template-columns: minmax(0, 1fr); padding: 20px; }
@@ -476,6 +477,63 @@ html { scroll-behavior: smooth; }
       <path style="fill:var(--acc)" d="M62 150C150 166 300 170 424 112L428 117C306 180 150 180 62 153Z"/>
       <text x="232" y="204" text-anchor="middle" font-family="Outfit, sans-serif" font-size="12.5" font-weight="600" textLength="260" fill="currentColor" opacity=".8">PERSONALISED FITNESS STUDIO</text>
     </g>
+
+    <!-- Set C: custom lettering, cap height 100 -->
+    <path id="hL" d="M0 0H26V76H62V100H0Z"/>
+    <path id="hE" d="M0 0H64V24H26V38H58V62H26V76H66V100H0Z"/>
+    <path id="hV" d="M0 0H27.8L46 47.9L64.2 0H92L54 100H38Z"/>
+    <path id="hU" d="M0 0H26V63.5A12 12 0 0 0 50 63.5V0H76V63.5A38 38 0 0 1 0 63.5Z"/>
+    <path id="hP" fill-rule="evenodd" d="M0 0H40A32 32 0 0 1 40 64H26V100H0ZM26 24H40A8 8 0 0 1 40 40H26Z"/>
+    <path id="mL" d="M0 0H12V88H54V100H0Z"/>
+    <path id="mEh" d="M0 0H56V12H12V30H50V42H12V88H58V100H0Z"/>
+    <path id="mV" d="M0 0H12.8L40 73.5L67.2 0H80L43 100H37Z"/>
+    <path id="mU" d="M0 0H12V68A21 21 0 0 0 54 68V0H66V68A33 33 0 0 1 0 68Z"/>
+    <path id="mP" fill-rule="evenodd" d="M0 0H31A29 29 0 0 1 31 58H12V100H0ZM12 12H31A17 17 0 0 1 31 46H12Z"/>
+    <g id="wmH-level"><use href="#hL"/><use href="#hE" x="72"/><use href="#hV" x="142"/><use href="#hE" x="238"/><use href="#hL" x="314"/></g>
+    <g id="wmH-up"><use href="#hU"/><use href="#hP" x="86"/></g>
+    <g id="wmH"><use href="#wmH-level"/><use href="#wmH-up" x="404"/></g>
+    <g id="wmA"><use href="#mL"/><use href="#mEh" x="86"/><use href="#mV" x="170"/><use href="#mEh" x="276"/><use href="#mL" x="366"/><use href="#mU" x="480"/><use href="#mP" x="578"/></g>
+    <clipPath id="clipLow"><rect x="-60" y="50" width="760" height="70"/></clipPath>
+    <clipPath id="clipHigh"><rect x="-60" y="-20" width="760" height="70"/></clipPath>
+
+    <symbol id="kMark" viewBox="0 -8 108 108">
+      <path fill="currentColor" d="M0 37H30V70H100V100H0Z"/>
+      <path style="fill:var(--acc)" d="M8-8H108V55H78V22H8Z"/>
+    </symbol>
+    <g id="lKey">
+      <use href="#kMark" x="12" y="12" width="108" height="108"/>
+      <use href="#wmH" transform="translate(150 28) scale(.52)" fill="currentColor"/>
+      <text x="150" y="104" font-family="Manrope, sans-serif" font-size="12.5" font-weight="700" textLength="292" fill="currentColor" opacity=".72">PERSONALISED FITNESS STUDIO</text>
+    </g>
+    <g id="lVert">
+      <use href="#wmH-level" transform="translate(16 74)" fill="currentColor"/>
+      <g transform="translate(406 174) rotate(-90)" style="fill:var(--acc)"><use href="#wmH-up"/></g>
+      <text x="16" y="206" font-family="Manrope, sans-serif" font-size="15" font-weight="800" textLength="376" fill="currentColor" opacity=".72">PERSONALISED FITNESS STUDIO</text>
+    </g>
+    <g id="splitWord">
+      <g transform="skewX(-11)">
+        <use href="#wmH" clip-path="url(#clipLow)"/>
+        <g transform="translate(6 -10)"><use href="#wmH" clip-path="url(#clipHigh)"/></g>
+      </g>
+    </g>
+    <g id="lSplit">
+      <use href="#splitWord" transform="translate(26 26) scale(.6)" fill="currentColor"/>
+      <text transform="translate(26 118) skewX(-11)" x="-11.6" y="0" font-family="Manrope, sans-serif" font-size="12.5" font-weight="800" textLength="318" fill="currentColor" opacity=".72">PERSONALISED FITNESS STUDIO</text>
+    </g>
+    <g id="lAtelier">
+      <use href="#wmA" transform="translate(36.7 20) scale(.7)" fill="currentColor"/>
+      <path d="M36.7 120.5H117M403 120.5H483.3" fill="none" style="stroke:var(--acc)" stroke-width="1.2"/>
+      <text x="260" y="125" text-anchor="middle" font-family="Manrope, sans-serif" font-size="11.5" font-weight="600" textLength="262" fill="currentColor" opacity=".8">PERSONALISED FITNESS STUDIO</text>
+    </g>
+    <symbol id="yMark" viewBox="-6 -22 112 136">
+      <path d="M14 36V58A36 36 0 0 0 86 58V36" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round"/>
+      <circle cx="50" cy="0" r="16" style="fill:var(--acc)"/>
+    </symbol>
+    <g id="lYou">
+      <use href="#yMark" x="14" y="14" width="90.6" height="110"/>
+      <text x="128" y="88" font-family="'Plus Jakarta Sans', sans-serif" font-size="64" font-weight="800" letter-spacing="-1.5" fill="currentColor">level up</text>
+      <text x="130" y="122" font-family="Manrope, sans-serif" font-size="11.5" font-weight="700" textLength="223" fill="currentColor" opacity=".72">PERSONALISED FITNESS STUDIO</text>
+    </g>
   </defs>
 </svg>
 
@@ -484,7 +542,7 @@ html { scroll-behavior: smooth; }
   <header class="head">
     <p class="eyebrow">Level Up · Personalised Fitness Studio</p>
     <h1>Choose your logo</h1>
-    <p class="lede">There are 12 ideas in two sets. Tap the logos you like in order of preference, favourite first. Then send your choice from the bottom of the page.</p>
+    <p class="lede">There are 17 ideas in three sets, newest first. Tap the logos you like in order of preference, favourite first. Then send your choice from the bottom of the page.</p>
   </header>
 
   <div class="toolbar">
@@ -496,6 +554,58 @@ html { scroll-behavior: smooth; }
   </div>
 
   <main>
+    <section class="set" aria-labelledby="set-c-title">
+      <div class="set-head">
+        <div>
+          <h2 id="set-c-title">Set C <span>· Complete identities</span></h2>
+          <p>The newest set: five brand directions with custom-drawn lettering.</p>
+        </div>
+        <a class="set-link" href="Level%20Up%20Identity%20Concepts.html">View the full Set C presentation</a>
+      </div>
+      <div class="grid grid--five">
+        <button type="button" class="card" data-code="C1" data-name="Lift" data-lockup="lKey" data-vb="0 0 454 132" aria-pressed="false" style="--acc-d:#6180FF;--acc-l:#2B4DFF">
+          <span class="preview"><svg viewBox="0 0 454 132" aria-hidden="true" focusable="false"><use href="#lKey"/></svg></span>
+          <span class="badge" aria-hidden="true">+</span>
+          <span class="card-body">
+            <span class="card-title"><span class="code">C1</span><span class="card-name">Lift</span></span>
+            <span class="card-desc">The two L's of LEVEL lock into a square, and the blue one is lifted a step.</span>
+          </span>
+        </button>
+        <button type="button" class="card" data-code="C2" data-name="Climb" data-lockup="lVert" data-vb="0 0 524 222" aria-pressed="false" style="--acc-d:#FF2D20;--acc-l:#E1140A">
+          <span class="preview"><svg viewBox="0 0 524 222" aria-hidden="true" focusable="false"><use href="#lVert"/></svg></span>
+          <span class="badge" aria-hidden="true">+</span>
+          <span class="card-body">
+            <span class="card-title"><span class="code">C2</span><span class="card-name">Climb</span></span>
+            <span class="card-desc">LEVEL runs along the bottom, then UP turns and climbs upward.</span>
+          </span>
+        </button>
+        <button type="button" class="card" data-code="C3" data-name="Split Level" data-lockup="lSplit" data-vb="0 0 384 134" aria-pressed="false">
+          <span class="preview"><svg viewBox="0 0 384 134" aria-hidden="true" focusable="false"><use href="#lSplit"/></svg></span>
+          <span class="badge" aria-hidden="true">+</span>
+          <span class="card-body">
+            <span class="card-title"><span class="code">C3</span><span class="card-name">Split Level</span></span>
+            <span class="card-desc">The word is sliced across the middle and the top half jumps up and forward.</span>
+          </span>
+        </button>
+        <button type="button" class="card" data-code="C4" data-name="Boutique" data-lockup="lAtelier" data-vb="0 0 520 146" aria-pressed="false" style="--acc-d:#B08A4E;--acc-l:#B08A4E;--ink-d:#E8DDC7;--ink-l:#14392D">
+          <span class="preview"><svg viewBox="0 0 520 146" aria-hidden="true" focusable="false"><use href="#lAtelier"/></svg></span>
+          <span class="badge" aria-hidden="true">+</span>
+          <span class="card-body">
+            <span class="card-title"><span class="code">C4</span><span class="card-name">Boutique</span></span>
+            <span class="card-desc">Premium lettering with a round LU seal, in forest green and sand.</span>
+          </span>
+        </button>
+        <button type="button" class="card" data-code="C5" data-name="You" data-lockup="lYou" data-vb="0 0 440 140" aria-pressed="false" style="--acc-d:#22D3BE;--acc-l:#00897B">
+          <span class="preview"><svg viewBox="0 0 440 140" aria-hidden="true" focusable="false"><use href="#lYou"/></svg></span>
+          <span class="badge" aria-hidden="true">+</span>
+          <span class="card-body">
+            <span class="card-title"><span class="code">C5</span><span class="card-name">You</span></span>
+            <span class="card-desc">The U of UP stands for you, with a dot for the client lifted above it.</span>
+          </span>
+        </button>
+      </div>
+    </section>
+
     <section class="set" aria-labelledby="set-a-title">
       <div class="set-head">
         <div>
@@ -759,6 +869,8 @@ html { scroll-behavior: smooth; }
     const box = document.createElement('span');
     box.className = 'thumb';
     box.style.setProperty('--acc', card.style.getPropertyValue('--acc-d'));
+    const ink = card.style.getPropertyValue('--ink-d');
+    if (ink) box.style.color = ink;
     const svg = make('svg', { viewBox: card.dataset.vb, 'aria-hidden': 'true', focusable: 'false' });
     svg.appendChild(make('use', { href: '#' + card.dataset.lockup }));
     box.appendChild(svg);
